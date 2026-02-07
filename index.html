@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abaad Iraq — Virtual Tours</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+
+    <div class="topbar__left">
+      <button class="pillBtn" id="langBtn" type="button">EN</button>
+      <a class="pillBtn pillBtn--primary" href="#contact" data-i18n="nav_contact">تواصل</a>
+    </div>
+
+    <nav class="topbar__nav" aria-label="main">
+      <a href="#home" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" data-i18n="nav_about">عن أبعاد العراق</a>
+      <a href="projects.html" data-i18n="nav_projects">مشاريعنا</a>
+      <a href="features.html" data-i18n="nav_features">مميزات الجولة</a>
+      <a href="#tours" data-i18n="nav_tours">جولاتنا</a>
+      <a href="#contact" data-i18n="nav_contact">تواصل</a>
+    </nav>
+
+    <a class="brand" href="#home" aria-label="Abaad Iraq">
+      <div class="brand__text">
+        <strong data-i18n="brand_name">أبعاد العراق</strong>
+        <span>Virtual Tours</span>
+      </div>
+      <img class="brand__logo" src="logo.png" alt="">
+    </a>
+
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- COVER -->
+  <section class="heroCoverFBPlain" aria-label="cover">
+    <img src="hero-cover-2.jpg" alt="Abaad Iraq Cover">
+  </section>
+
+  <!-- TITLE + CTA -->
+  <section class="wrap heroCopy">
+    <div class="heroCopy__pill" data-i18n="hero_pill">جولات افتراضية 360° داخل العراق</div>
+
+    <h1 class="heroCopy__h1" data-i18n="hero_title">خلّ مشروعك ينشاف قبل لا ينزار</h1>
+
+    <p class="heroCopy__p" data-i18n="hero_desc">
+      نعطيك تجربة عرض ثلاثية الأبعاد واقعية تدعم التسويق، ترفع ثقة الزبون، وتختصر وقت القرار.
+    </p>
+
+    <div class="heroCopy__cta">
+      <a class="btn btn--primary" href="#tours" data-i18n="hero_cta1">شاهد الجولات</a>
+      <a class="btn btn--ghost" href="#contact" data-i18n="hero_cta2">اطلب تسعير</a>
+    </div>
+
+    <div class="chipsRibbon" aria-label="Highlights">
+      <span data-i18n="chip_1">Fast Response</span>
+      <span data-i18n="chip_2">Measurements</span>
+      <span data-i18n="chip_3">3D/2D View</span>
+      <span data-i18n="chip_4">Space Capture</span>
+      <span data-i18n="chip_5">Photos + Videos</span>
+      <span data-i18n="chip_6">Google Maps</span>
+    </div>
+  </section>
+
+  <!-- GATEWAYS -->
+  <section class="wrap gates" id="gates">
+    <div class="gates__head">
+      <div class="gates__tag" data-i18n="gates_tag">LANDING PAGE</div>
+      <h2 data-i18n="gates_title">بوابات الموقع</h2>
+      <p data-i18n="gates_desc">أربع بوابات — كل بوابة تروح لصفحة مستقلة.</p>
+    </div>
+
+    <div class="mosaic">
+      <a class="tile tile--big" href="about.html">
+        <div class="tile__media">
+          <img src="gate-1.jpg" alt="">
+        </div>
+        <div class="tile__cap">
+          <div class="tile__pill">01</div>
+          <div>
+            <strong data-i18n="gate1_title">عن أبعاد العراق</strong>
+            <span data-i18n="gate1_sub">نبذة + قصة المشروع + الهدف</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="tile tile--tall" href="projects.html">
+        <div class="tile__media">
+          <img src="gate-1.jpg" alt="">
+        </div>
+        <div class="tile__cap">
+          <div class="tile__pill">02</div>
+          <div>
+            <strong data-i18n="gate2_title">مشاريعنا المنجزة</strong>
+            <span data-i18n="gate2_sub">استعراض المشاريع داخل الصفحة</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="tile tile--mid" href="features.html">
+        <div class="tile__media">
+          <img src="gate-1.jpg" alt="">
+        </div>
+        <div class="tile__cap">
+          <div class="tile__pill">03</div>
+          <div>
+            <strong data-i18n="gate3_title">مميزات الجولة</strong>
+            <span data-i18n="gate3_sub">قياس + تفريغ + 3D/2D + محتوى</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="tile tile--dark" href="#tours">
+        <div class="tile__cap tile__cap--only">
+          <div class="tile__pill">04</div>
+          <div>
+            <strong data-i18n="gate4_title">جولاتنا داخل الموقع</strong>
+            <span data-i18n="gate4_sub">عرض مباشر داخل الصفحة</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section class="wrap tours" id="tours">
+    <div class="tours__head">
+      <h2 data-i18n="tours_title">جولاتنا</h2>
+      <p data-i18n="tours_desc">اختاري مشروع من القائمة وشوفيه مباشرة.</p>
+    </div>
+
+    <div class="tourBox">
+      <div class="tourBox__left">
+        <button class="tourBtn isActive" data-src="https://my.matterport.com/show/?m=tC4RfesELZw" data-i18n="tour_btn_1">مطعم (مثال)</button>
+        <button class="tourBtn" data-src="https://my.matterport.com/show/?m=33mzsiPWyX2" data-i18n="tour_btn_2">فندق (مثال)</button>
+      </div>
+
+      <div class="tourBox__right">
+        <iframe id="tourFrame"
+          src="https://my.matterport.com/show/?m=tC4RfesELZw"
+          title="Virtual Tour"
+          allow="xr-spatial-tracking; fullscreen; autoplay; gyroscope; accelerometer"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="wrap contact" id="contact">
+    <h2 data-i18n="contact_title">تواصل</h2>
+
+    <div class="contact__card">
+      <div class="contact__row">
+        <strong>WhatsApp:</strong>
+        <a href="https://wa.me/9647770350030" target="_blank" rel="noopener">+964 777 035 0030</a>
+      </div>
+      <div class="contact__row">
+        <strong>Email:</strong>
+        <a href="mailto:abaadaliraq07@gmail.com">abaadaliraq07@gmail.com</a>
+      </div>
+
+      <div class="contact__social">
+        <a href="https://instagram.com/abaad.aliraq" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@abaad.aliraq" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://web.facebook.com/aliraqdiementions" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL FOOTER (واحد فقط) -->
+  <footer class="siteFooter" role="contentinfo">
+    <div class="wrap fWrap">
+
+      <section class="fCta" aria-label="CTA">
+        <div class="fCta__text">
+          <h3 data-i18n="f_cta_title">جاهزين نخلي مشروعك ينشاف قبل الزيارة</h3>
+          <p data-i18n="f_cta_desc">راسلنا الآن وخلي فريقنا يقترح عليك أفضل طريقة للعرض والتسويق.</p>
+        </div>
+
+        <div class="fCta__actions">
+          <a class="fBtn fBtn--primary" href="https://wa.me/9647770350030" target="_blank" rel="noopener"
+             data-i18n="f_cta_whatsapp">تواصل واتساب</a>
+          <a class="fBtn" href="mailto:abaadaliraq07@gmail.com" data-i18n="f_cta_email">راسلنا ايميل</a>
+        </div>
+      </section>
+
+      <section class="fGrid" aria-label="Footer content">
+        <div class="fCol">
+          <div class="fBrand">
+            <img class="fLogo" src="logo.png" alt="">
+            <div class="fBrand__text">
+              <strong data-i18n="brand_name">أبعاد العراق</strong>
+              <span>Virtual Tours</span>
+            </div>
+          </div>
+          <p class="fNote" data-i18n="f_note">جولات افتراضية تفاعلية ترفع قيمة المشروع وتختصر قرار العميل.</p>
+        </div>
+
+        <div class="fCol">
+          <h4 class="fTitle" data-i18n="f_contact">تواصل</h4>
+
+          <div class="fRow">
+            <span class="fKey" data-i18n="f_phone">هاتف</span>
+            <a class="fVal" href="tel:+9647770350030">+964 777 035 0030</a>
+          </div>
+
+          <div class="fRow">
+            <span class="fKey">WhatsApp</span>
+            <a class="fVal" href="https://wa.me/9647770350030" target="_blank" rel="noopener">+964 777 035 0030</a>
+          </div>
+
+          <div class="fRow">
+            <span class="fKey">Email</span>
+            <a class="fVal" href="mailto:abaadaliraq07@gmail.com">abaadaliraq07@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="fCol">
+          <h4 class="fTitle" data-i18n="f_social">مواقع التواصل</h4>
+
+          <div class="fIcons" aria-label="Social links">
+            <a class="fIcon" href="https://web.facebook.com/aliraqdiementions" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.2c0-.9.3-1.6 1.6-1.6H16.8V5c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.8v8h3.7z"/></svg>
+              <span>Facebook</span>
+            </a>
+
+            <a class="fIcon" href="https://instagram.com/abaad.aliraq" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.8-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+              <span>Instagram</span>
+            </a>
+
+            <a class="fIcon" href="https://youtube.com/@abaad.aliraq" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.8 4.6 12 4.6 12 4.6s-5.8 0-7.5.5A3 3 0 0 0 2.4 7.2 31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.7.5 7.5.5 7.5.5s5.8 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10.2 15.3V8.7L15.9 12l-5.7 3.3Z"/></svg>
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="fBottom">
+        <div class="fCopy">
+          <span>©</span> <span data-i18n="brand_name">أبعاد العراق</span> <span id="year"></span>
+        </div>
+        <div class="fLinks">
+          <a href="privacy.html" data-i18n="f_privacy">سياسة الخصوصية</a>
+          <a href="terms.html" data-i18n="f_terms">الشروط</a>
+        </div>
+      </section>
+
+    </div>
+  </footer>
+
+</main>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

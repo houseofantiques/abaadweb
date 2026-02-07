@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ar" data-dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abaad Iraq — Tours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container inner">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="">
+      <span class="meta">
+        <strong data-i18n="brand_name">أبعاد العراق</strong>
+        <em data-i18n="brand_sub">Virtual Tours</em>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="main">
+      <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" data-i18n="nav_about">عن أبعاد العراق</a>
+      <a href="projects.html" data-i18n="nav_projects">مشاريعنا</a>
+      <a href="features.html" data-i18n="nav_features">مميزات الجولة</a>
+      <a href="tours.html" data-i18n="nav_tours">جولاتنا</a>
+      <a href="#contact" data-i18n="nav_contact">تواصل</a>
+    </nav>
+
+    <div class="actions">
+      <button class="langBtn" id="langBtn" type="button">EN</button>
+      <button class="ctaBtn" type="button" data-go="#contact" data-i18n="nav_contact">تواصل</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="pageHead">
+    <h1 data-i18n="tours_h1">جولاتنا</h1>
+    <p data-i18n="tours_p">اختاري جولة وشوفيها داخل الصفحة. بحث وفلترة جاهزة.</p>
+  </section>
+
+  <div class="toursTop">
+    <div class="search">
+      <input id="q" type="search" data-i18n-placeholder="search_ph" placeholder="ابحث باسم المشروع…">
+      <select id="city">
+        <option value="" data-i18n="filter_city">كل المحافظات</option>
+      </select>
+      <select id="sector">
+        <option value="" data-i18n="filter_sector">كل القطاعات</option>
+      </select>
+    </div>
+    <div class="chip" id="count">0</div>
+  </div>
+
+  <section class="toursGrid" id="grid"></section>
+
+  <section class="section" aria-label="viewer">
+    <div class="secHead">
+      <h2>Viewer</h2>
+      <p>Tour will open here (embedded).</p>
+    </div>
+
+    <div class="blockBig" style="min-height:520px">
+      <div class="media" style="grid-column: 1 / -1">
+        <iframe id="viewer" title="Tour Viewer"
+          src=""
+          style="width:100%;height:520px;border:0;"
+          allow="xr-spatial-tracking; fullscreen; autoplay; gyroscope; accelerometer"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="secHead">
+      <h2 data-i18n="footer_contact">تواصل</h2>
+      <p>WhatsApp / Email / Social</p>
+    </div>
+
+    <div class="point">
+      <strong>Abaad Iraq</strong>
+      <span>
+        WhatsApp: <a href="https://wa.me/9647770350030" target="_blank" rel="noopener">+964 777 035 0030</a><br>
+        Email: <a href="mailto:abaadaliraq07@gmail.com">abaadaliraq07@gmail.com</a>
+      </span>
+
+      <div class="social">
+        <a href="https://instagram.com/abaad.aliraq" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@abaad.aliraq" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://web.facebook.com/aliraqdiementions" target="_blank" rel="noopener">Facebook</a>
+      </div>
+
+      <div class="spacer"></div>
+      <a class="linkBtn" href="https://wa.me/9647770350030" target="_blank" rel="noopener" data-i18n="contact_btn">تواصل واتساب</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <h4 data-i18n="brand_name">أبعاد العراق</h4>
+        <p data-i18n="footer_about"></p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_links">روابط</h4>
+        <p><a href="index.html" data-i18n="nav_home">الرئيسية</a></p>
+        <p><a href="tours.html" data-i18n="nav_tours">جولاتنا</a></p>
+        <p><a href="projects.html" data-i18n="nav_projects">مشاريعنا</a></p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_legal">قانوني</h4>
+        <p><a href="privacy.html" data-i18n="footer_privacy">سياسة الخصوصية</a></p>
+        <p><a href="terms.html" data-i18n="footer_terms">الشروط والأحكام</a></p>
+      </div>
+    </div>
+
+    <div class="footBottom">
+      <span data-i18n="footer_copy">© جميع الحقوق محفوظة — أبعاد العراق</span>
+      <span>v1</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+<script src="js/tours-data.js"></script>
+
+<script>
+"use strict";
+
+function uniq(arr){ return [...new Set(arr)].filter(Boolean); }
+
+function getName(t){
+  const lang = localStorage.getItem("abaad_lang") || "ar";
+  return (lang === "ar") ? t.name_ar : t.name_en;
+}
+
+function fillFilters(){
+  const cities = uniq(TOURS.map(t=>t.city)).sort();
+  const sectors = uniq(TOURS.map(t=>t.sector)).sort();
+
+  const citySel = document.getElementById("city");
+  const sectorSel = document.getElementById("sector");
+
+  cities.forEach(c=>{
+    const opt = document.createElement("option");
+    opt.value = c;
+    opt.textContent = c;
+    citySel.appendChild(opt);
+  });
+
+  sectors.forEach(s=>{
+    const opt = document.createElement("option");
+    opt.value = s;
+    opt.textContent = s;
+    sectorSel.appendChild(opt);
+  });
+}
+
+function render(){
+  const q = (document.getElementById("q").value || "").toLowerCase().trim();
+  const city = document.getElementById("city").value;
+  const sector = document.getElementById("sector").value;
+
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+
+  const lang = localStorage.getItem("abaad_lang") || "ar";
+  const dict = (I18N[lang] || I18N.ar);
+
+  const list = TOURS.filter(t=>{
+    const name = getName(t).toLowerCase();
+    const okQ = !q || name.includes(q);
+    const okC = !city || t.city === city;
+    const okS = !sector || t.sector === sector;
+    return okQ && okC && okS;
+  });
+
+  document.getElementById("count").textContent = list.length;
+
+  list.forEach(t=>{
+    const card = document.createElement("article");
+    card.className = "tour";
+
+    card.innerHTML = `
+      <div class="thumb">
+        <img src="${t.thumb || "assets/gate-2.jpg"}" alt="">
+      </div>
+      <div class="info">
+        <div class="meta">
+          <span class="badge">${t.city}</span>
+          <span class="badge">${t.sector}</span>
+          <span class="badge">${t.year || ""}</span>
+        </div>
+        <h3>${getName(t)}</h3>
+        <p>${t.url}</p>
+        <div class="open">
+          <button class="linkBtn" type="button">${dict.open_tour}</button>
+          <button class="btn2" type="button">${dict.copy_link}</button>
+        </div>
+      </div>
+    `;
+
+    const [openBtn, copyBtn] = card.querySelectorAll("button");
+
+    openBtn.addEventListener("click", ()=>{
+      const viewer = document.getElementById("viewer");
+      viewer.src = t.url;
+      viewer.scrollIntoView({behavior:"smooth", block:"center"});
+    });
+
+    copyBtn.addEventListener("click", async ()=>{
+      try{
+        await navigator.clipboard.writeText(t.url);
+        copyBtn.textContent = "✓";
+        setTimeout(()=>copyBtn.textContent = dict.copy_link, 900);
+      }catch{
+        alert(t.url);
+      }
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  fillFilters();
+  ["q","city","sector"].forEach(id=>{
+    document.getElementById(id).addEventListener("input", render);
+    document.getElementById(id).addEventListener("change", render);
+  });
+  render();
+});
+</script>
+<!-- FOOTER (Global) -->
+<footer class="siteFooter" id="contact" role="contentinfo">
+  <div class="wrap fWrap">
+
+    <!-- CTA BAR -->
+    <section class="fCta" aria-label="CTA">
+      <div class="fCta__text">
+        <h3 data-i18n="f_cta_title">جاهزين نخلي مشروعك ينشاف قبل الزيارة</h3>
+        <p data-i18n="f_cta_desc">راسلنا الآن وخلي فريقنا يقترح عليك أفضل طريقة للعرض والتسويق.</p>
+      </div>
+
+      <div class="fCta__actions">
+        <a class="fBtn fBtn--primary" href="https://wa.me/9647770350030" target="_blank" rel="noopener"
+           data-i18n="f_cta_whatsapp">تواصل واتساب</a>
+        <a class="fBtn" href="mailto:abaadaliraq07@gmail.com" data-i18n="f_cta_email">راسلنا ايميل</a>
+      </div>
+    </section>
+
+    <!-- MAIN FOOTER GRID -->
+    <section class="fGrid" aria-label="Footer content">
+
+      <!-- Brand / About -->
+      <div class="fCol">
+        <div class="fBrand">
+          <img class="fLogo" src="logo.png" alt="">
+          <div class="fBrand__text">
+            <strong data-i18n="brand_name">أبعاد العراق</strong>
+            <span>Virtual Tours</span>
+          </div>
+        </div>
+        <p class="fNote" data-i18n="f_note">
+          جولات افتراضية تفاعلية ترفع قيمة المشروع وتختصر قرار العميل.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="fCol">
+        <h4 class="fTitle" data-i18n="f_contact">تواصل</h4>
+
+        <div class="fRow">
+          <span class="fKey" data-i18n="f_phone">هاتف</span>
+          <a class="fVal" href="tel:+9647770350030">+964 777 035 0030</a>
+        </div>
+
+        <div class="fRow">
+          <span class="fKey">WhatsApp</span>
+          <a class="fVal" href="https://wa.me/9647770350030" target="_blank" rel="noopener">+964 777 035 0030</a>
+        </div>
+
+        <div class="fRow">
+          <span class="fKey">Email</span>
+          <a class="fVal" href="mailto:abaadaliraq07@gmail.com">abaadaliraq07@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="fCol">
+        <h4 class="fTitle" data-i18n="f_social">مواقع التواصل</h4>
+
+        <div class="fIcons" aria-label="Social links">
+          <a class="fIcon" href="https://web.facebook.com/aliraqdiementions" target="_blank" rel="noopener" aria-label="Facebook">
+            <!-- fb -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.2c0-.9.3-1.6 1.6-1.6H16.8V5c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.8v8h3.7z"/></svg>
+            <span>Facebook</span>
+          </a>
+
+          <a class="fIcon" href="https://instagram.com/abaad.aliraq" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- ig -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.8-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+            <span>Instagram</span>
+          </a>
+
+          <a class="fIcon" href="https://youtube.com/@abaad.aliraq" target="_blank" rel="noopener" aria-label="YouTube">
+            <!-- yt -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.8 4.6 12 4.6 12 4.6s-5.8 0-7.5.5A3 3 0 0 0 2.4 7.2 31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.7.5 7.5.5 7.5.5s5.8 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10.2 15.3V8.7L15.9 12l-5.7 3.3Z"/></svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom bar -->
+    <section class="fBottom">
+      <div class="fCopy">
+        <span>©</span> <span data-i18n="brand_name">أبعاد العراق</span> <span id="year"></span>
+      </div>
+
+      <div class="fLinks">
+        <a href="privacy.html" data-i18n="f_privacy">سياسة الخصوصية</a>
+        <a href="terms.html" data-i18n="f_terms">الشروط</a>
+      </div>
+    </section>
+
+  </div>
+</footer>
+
+</body>
+</html>

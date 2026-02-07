@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>أبعاد العراق — من نحن</title>
+<link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* === NEW PALETTE (different from home) === */
+      --bg: #f4f1ea;         /* warm off-white */
+      --paper: #fbfaf7;      /* paper */
+      --ink: #151515;        /* near black */
+      --muted: #5c5c5c;
+      --line: rgba(0,0,0,.10);
+
+      --dark: #121212;
+      --dark2: #1a1a1a;
+
+      --accent: #b08b57;     /* subtle gold */
+      --shadow: 0 22px 70px rgba(0,0,0,.14);
+      --shadow2: 0 12px 28px rgba(0,0,0,.10);
+
+      --r-xl: 30px;
+      --r-lg: 24px;
+      --r-md: 18px;
+
+      --wrap: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1000px 520px at 70% 0%, rgba(176,139,87,.10) 0%, rgba(176,139,87,0) 60%),
+        radial-gradient(1000px 520px at 20% 10%, rgba(0,0,0,.06) 0%, rgba(0,0,0,0) 60%),
+        var(--bg);
+      color:var(--ink);
+      font-family:"Cairo", system-ui, -apple-system, Segoe UI, Arial;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .wrap{width:min(var(--wrap), calc(100% - 44px)); margin-inline:auto}
+
+    /* Topbar (warm glass, not blue) */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(251,250,247,.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar__inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:12px 0;
+    }
+    .topbar__left{display:flex; gap:10px; align-items:center}
+
+    .pillBtn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.70);
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:900;
+      cursor:pointer;
+    }
+    .pillBtn--primary{
+      background: var(--dark);
+      border-color: transparent;
+      color:#fff;
+      box-shadow: 0 12px 26px rgba(0,0,0,.18);
+    }
+
+    .topbar__nav{
+      display:flex; gap:10px; align-items:center;
+      font-size:13px;
+    }
+    .topbar__nav a{
+      padding:8px 10px;
+      border-radius:999px;
+      color: rgba(0,0,0,.75);
+      font-weight:900;
+    }
+    .topbar__nav a:hover{background: rgba(0,0,0,.05)}
+
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand__logo{width:38px;height:38px;border-radius:12px;object-fit:cover}
+    .brand__text{display:flex; flex-direction:column; line-height:1.05; text-align:right}
+    .brand__text strong{font-size:14px}
+    .brand__text span{font-size:12px; color:var(--muted); font-weight:800}
+
+    /* FB COVER (plain) */
+    .coverFB{
+      width:100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      overflow:hidden;
+      aspect-ratio: 820 / 312;
+      background:#e9e3d7;
+    }
+    .coverFB img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      filter: contrast(1.02) saturate(1.02);
+    }
+
+    /* Page shell like reference (rounded big container) */
+    .shell{
+      margin-top: -22px; /* slight overlap like tablet mock */
+      background: rgba(251,250,247,.78);
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    /* Hero block inside shell */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .heroCard{
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      position:relative;
+      background: #ddd7cc;
+      min-height: 330px;
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .heroCard img{
+      width:100%; height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+    }
+    .heroOverlay{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(700px 420px at 18% 35%, rgba(0,0,0,.62) 0%, rgba(0,0,0,.22) 45%, rgba(0,0,0,0) 70%);
+      pointer-events:none;
+    }
+    .heroText{
+      position:absolute;
+      inset:auto 16px 16px 16px;
+      color:#fff;
+    }
+    .heroKicker{
+      display:flex; gap:10px; flex-wrap:wrap;
+      font-weight:900; font-size:12px;
+      opacity:.92;
+    }
+    .heroKicker span{
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(10px);
+    }
+    .heroTitle{
+      margin:10px 0 6px;
+      font-size: clamp(22px, 2.2vw, 34px);
+      line-height:1.12;
+      letter-spacing:-.02em;
+      font-weight:900;
+    }
+    .heroDesc{
+      margin:0;
+      max-width: 60ch;
+      font-weight:800;
+      font-size:13px;
+      opacity:.92;
+    }
+
+    /* Right info column */
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .sideCard{
+      border-radius: var(--r-xl);
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: var(--shadow2);
+      padding: 14px 14px;
+    }
+    .sideCard h2{
+      margin:0 0 8px;
+      font-size: 14px;
+      letter-spacing:.1px;
+      font-weight:900;
+    }
+    .sideCard p{
+      margin:0;
+      color: var(--muted);
+      font-weight:800;
+      line-height:1.8;
+      font-size: 13px;
+    }
+
+    /* Dark callout (like reference) */
+    .callout{
+      margin-top: 14px;
+      border-radius: var(--r-xl);
+      background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+      color:#fff;
+      padding: 18px 18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.20);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .callout h3{
+      margin:0 0 8px;
+      font-size: 18px;
+      font-weight:900;
+      letter-spacing:-.01em;
+    }
+    .callout p{
+      margin:0;
+      color: rgba(255,255,255,.80);
+      font-weight:800;
+      line-height:1.85;
+      font-size: 13px;
+      max-width: 90ch;
+    }
+
+    /* Mosaic section (images + text like reference) */
+    .mosaic{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-rows: 160px;
+      gap:14px;
+      align-items:stretch;
+    }
+    .tile{
+      border-radius: var(--r-lg);
+      overflow:hidden;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.70);
+      box-shadow: var(--shadow2);
+      position:relative;
+    }
+    .tile img{
+      width:100%; height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      filter: contrast(1.02) saturate(1.02);
+    }
+    .tile--text{
+      padding: 14px 14px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:10px;
+      background: rgba(255,255,255,.78);
+    }
+    .tile--text h4{
+      margin:0;
+      font-size: 14px;
+      font-weight:900;
+      letter-spacing:-.01em;
+    }
+    .tile--text ul{
+      margin:0;
+      padding:0 18px;
+      color: var(--muted);
+      font-weight:800;
+      line-height:1.85;
+      font-size: 13px;
+    }
+
+    /* Make specific mosaic shapes */
+    .t1{grid-column:1 / span 2; grid-row:1 / span 2; min-height: 334px;}
+    .t2{grid-column:3; grid-row:1;}
+    .t3{grid-column:3; grid-row:2;}
+    .t4{grid-column:1; grid-row:3;}
+    .t5{grid-column:2; grid-row:3;}
+    .t6{grid-column:3; grid-row:3;}
+
+    /* Footer */
+    .footer{
+      margin-top: 18px;
+      border-top:1px solid rgba(0,0,0,.10);
+      padding: 14px 0 20px;
+      background: rgba(251,250,247,.55);
+      backdrop-filter: blur(10px);
+    }
+    .footer__inner{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      color: var(--muted);
+      font-weight:800;
+      font-size: 13px;
+    }
+    .footer__links{display:flex; gap:12px}
+    .footer__links a:hover{text-decoration:underline}
+
+    /* LTR */
+    html[data-dir="ltr"]{direction:ltr}
+    html[data-dir="ltr"] body{font-family:"Inter", system-ui, -apple-system, Segoe UI, Arial}
+    html[data-dir="ltr"] .brand__text{text-align:left}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .topbar__nav{display:none}
+      .hero{grid-template-columns:1fr}
+      .heroCard{min-height: 300px}
+      .mosaic{
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 150px;
+      }
+      .t1{grid-column:1 / span 2; grid-row:1 / span 2; min-height: 314px;}
+      .t2{grid-column:1; grid-row:3;}
+      .t3{grid-column:2; grid-row:3;}
+      .t4{grid-column:1; grid-row:4;}
+      .t5{grid-column:2; grid-row:4;}
+      .t6{grid-column:1 / span 2; grid-row:5;}
+    }
+    @media (max-width: 540px){
+      .wrap{width: calc(100% - 28px)}
+      .shell{padding: 14px; border-radius: 26px}
+      .heroCard, .sideCard, .callout, .tile{border-radius: 22px}
+      .mosaic{grid-template-columns:1fr}
+      .t1{grid-column:auto; grid-row:auto; min-height: 280px;}
+      .t2,.t3,.t4,.t5,.t6{grid-column:auto; grid-row:auto;}
+    }
+  </style>
+</head>
+
+<body>
+<body class="page-about">
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+
+    <div class="topbar__left">
+      <button class="pillBtn" id="langBtn" type="button">EN</button>
+      <a class="pillBtn pillBtn--primary" href="index.html" data-i18n="btn_home">الرئيسية</a>
+    </div>
+
+    <nav class="topbar__nav" aria-label="main">
+      <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" data-i18n="nav_about">عن أبعاد العراق</a>
+      <a href="projects.html" data-i18n="nav_projects">مشاريعنا</a>
+      <a href="features.html" data-i18n="nav_features">مميزات الجولة</a>
+      <a href="index.html#contact" data-i18n="nav_contact">تواصل</a>
+    </nav>
+
+    <a class="brand" href="index.html" aria-label="Abaad Iraq">
+      <div class="brand__text">
+        <strong data-i18n="brand_name">أبعاد العراق</strong>
+        <span>Virtual Tours</span>
+      </div>
+      <img class="brand__logo" src="logo.png" alt="">
+    </a>
+
+  </div>
+</header>
+
+<!-- FB cover (plain) -->
+<section class="coverFB" aria-label="cover">
+  <img src="gate-1.jpg" alt="Abaad Iraq Cover">
+</section>
+
+<main class="wrap">
+  <section class="shell">
+
+    <!-- HERO (like reference: big rounded image + right info blocks) -->
+    <section class="hero">
+
+      <article class="heroCard" aria-label="about hero">
+        <img src="gate-1.jpg" alt="">
+        <div class="heroOverlay" aria-hidden="true"></div>
+        <div class="heroText">
+          <div class="heroKicker">
+            <span data-i18n="k1">من أمريكا → مصر → العراق</span>
+            <span data-i18n="k2">عرض واقعي للمشاريع</span>
+          </div>
+          <h1 class="heroTitle" data-i18n="hero_title">أبعاد العراق: تجربة رقمية ترفع قيمة المشروع</h1>
+          <p class="heroDesc" data-i18n="hero_desc">
+            انطلقت أبعاد العراق من الولايات المتحدة، ثم انتقلت إلى مصر، واستقرت أخيرًا في العراق لتقديم خدماتها الرائدة.
+            نحن نؤمن أن الجولات الافتراضية ليست مجرد أداة عرض، بل وسيلة لرفع قيمة المشاريع وإبرازها بصورة حديثة تواكب العصر.
+          </p>
+        </div>
+      </article>
+
+      <aside class="side">
+        <div class="sideCard">
+          <h2 data-i18n="vision_h">الرؤية</h2>
+          <p data-i18n="vision_p">
+            أن تكون أبعاد العراق معياراً محلياً رائداً لعرض المشاريع بطريقة رقمية حديثة، تربط السوق العراقي بفرص عالمية.
+          </p>
+        </div>
+
+        <div class="sideCard">
+          <h2 data-i18n="mission_h">الرسالة</h2>
+          <p data-i18n="mission_p">
+            تحويل الرؤية المعمارية والثقافية والتجارية إلى تجربة واقعية رقمية، تعزز الثقة وتدعم التسويق وتسرّع قرار العميل.
+          </p>
+        </div>
+
+        <div class="sideCard">
+          <h2 data-i18n="why_h">لماذا نحن؟</h2>
+          <p data-i18n="why_p">
+            نركز على تقديم تجربة دقيقة ومنظمة تساعد صاحب المشروع على إبراز المساحة، التفاصيل، والمحتوى بطريقة احترافية قابلة للمشاركة.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Dark callout -->
+    <section class="callout" aria-label="goals callout">
+      <h3 data-i18n="call_h">أهدافنا باختصار</h3>
+      <p data-i18n="call_p">
+        نساهم في دعم المشاريع داخل العراق عبر تجربة رقمية واقعية ترفع مستوى العرض، تقوّي الانطباع، وتفتح المجال للتسويق الذكي.
+      </p>
+    </section>
+
+    <!-- Mosaic (images + goals list like reference) -->
+    <section class="mosaic" aria-label="about mosaic">
+
+      <div class="tile t1">
+        <img src="hero-cover-3.jpg" alt="">
+      </div>
+
+      <div class="tile t2">
+        <img src="gate-1.jpg" alt="">
+      </div>
+
+      <div class="tile t3">
+        <img src="hero-cover-2.jpg" alt="">
+      </div>
+
+      <div class="tile tile--text t4">
+        <h4 data-i18n="g1_h">هدف 01</h4>
+        <ul>
+          <li data-i18n="g1_1">رفع قيمة المشروع عبر عرض واقعي يبرز التفاصيل.</li>
+          <li data-i18n="g1_2">تعزيز ثقة الزبون قبل الزيارة الفعلية.</li>
+        </ul>
+      </div>
+
+      <div class="tile tile--text t5">
+        <h4 data-i18n="g2_h">هدف 02</h4>
+        <ul>
+          <li data-i18n="g2_1">دعم التسويق بمواد قابلة للمشاركة والانتشار.</li>
+          <li data-i18n="g2_2">اختصار وقت القرار وتحسين تجربة العميل.</li>
+        </ul>
+      </div>
+
+      <div class="tile tile--text t6">
+        <h4 data-i18n="g3_h">هدف 03</h4>
+        <ul>
+          <li data-i18n="g3_1">إبراز المشاريع العراقية بصورة حديثة تواكب العصر.</li>
+          <li data-i18n="g3_2">فتح آفاق أوسع للوصول لجمهور محلي وخارجي.</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>© <span data-i18n="brand_name">أبعاد العراق</span></div>
+    <div class="footer__links">
+      <a href="privacy.html" data-i18n="privacy">سياسة الخصوصية</a>
+      <a href="terms.html" data-i18n="terms">الشروط</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+/* ===== i18n (AR/EN) ===== */
+const I18N = {
+  ar: {
+    btn_home:"الرئيسية",
+    nav_home:"الرئيسية",
+    nav_about:"عن أبعاد العراق",
+    nav_projects:"مشاريعنا",
+    nav_features:"مميزات الجولة",
+    nav_contact:"تواصل",
+    brand_name:"أبعاد العراق",
+    privacy:"سياسة الخصوصية",
+    terms:"الشروط",
+
+    k1:"من أمريكا → مصر → العراق",
+    k2:"عرض واقعي للمشاريع",
+
+    hero_title:"أبعاد العراق: تجربة رقمية ترفع قيمة المشروع",
+    hero_desc:"انطلقت أبعاد العراق من الولايات المتحدة، ثم انتقلت إلى مصر، واستقرت أخيرًا في العراق لتقديم خدماتها الرائدة. نحن نؤمن أن الجولات الافتراضية ليست مجرد أداة عرض، بل وسيلة لرفع قيمة المشاريع وإبرازها بصورة حديثة تواكب العصر. نركز على توظيف هذه التقنية المتقدمة في دعم مختلف المشاريع داخل العراق، حيث نُسهم في تحويل الرؤية المعمارية والثقافية والتجارية إلى تجربة واقعية رقمية تُثري السوق المحلي وتفتح آفاقًا عالمية.",
+
+    vision_h:"الرؤية",
+    vision_p:"أن تكون أبعاد العراق معياراً محلياً رائداً لعرض المشاريع بطريقة رقمية حديثة، تربط السوق العراقي بفرص عالمية.",
+    mission_h:"الرسالة",
+    mission_p:"تحويل الرؤية المعمارية والثقافية والتجارية إلى تجربة واقعية رقمية، تعزز الثقة وتدعم التسويق وتسرّع قرار العميل.",
+    why_h:"لماذا نحن؟",
+    why_p:"نركز على تقديم تجربة دقيقة ومنظمة تساعد صاحب المشروع على إبراز المساحة، التفاصيل، والمحتوى بطريقة احترافية قابلة للمشاركة.",
+
+    call_h:"أهدافنا باختصار",
+    call_p:"نساهم في دعم المشاريع داخل العراق عبر تجربة رقمية واقعية ترفع مستوى العرض، تقوّي الانطباع، وتفتح المجال للتسويق الذكي.",
+
+    g1_h:"هدف 01",
+    g1_1:"رفع قيمة المشروع عبر عرض واقعي يبرز التفاصيل.",
+    g1_2:"تعزيز ثقة الزبون قبل الزيارة الفعلية.",
+
+    g2_h:"هدف 02",
+    g2_1:"دعم التسويق بمواد قابلة للمشاركة والانتشار.",
+    g2_2:"اختصار وقت القرار وتحسين تجربة العميل.",
+
+    g3_h:"هدف 03",
+    g3_1:"إبراز المشاريع العراقية بصورة حديثة تواكب العصر.",
+    g3_2:"فتح آفاق أوسع للوصول لجمهور محلي وخارجي."
+  },
+  en: {
+    btn_home:"Home",
+    nav_home:"Home",
+    nav_about:"About",
+    nav_projects:"Projects",
+    nav_features:"Features",
+    nav_contact:"Contact",
+    brand_name:"Abaad Iraq",
+    privacy:"Privacy Policy",
+    terms:"Terms",
+
+    k1:"USA → Egypt → Iraq",
+    k2:"Realistic project showcase",
+
+    hero_title:"Abaad Iraq: a digital experience that elevates project value",
+    hero_desc:"Abaad Iraq started in the United States, moved to Egypt, and finally settled in Iraq to deliver leading services. We believe virtual tours are not just a display tool — they are a way to raise project value and present it in a modern, market-ready form. We focus on using this advanced approach to support different projects across Iraq, transforming architectural, cultural, and commercial visions into a realistic digital experience that enriches the local market and opens global opportunities.",
+
+    vision_h:"Vision",
+    vision_p:"To become Iraq’s leading benchmark for modern digital project showcasing, connecting local businesses to broader opportunities.",
+    mission_h:"Mission",
+    mission_p:"To turn architectural, cultural, and commercial visions into a realistic digital experience that builds trust, supports marketing, and accelerates customer decisions.",
+    why_h:"Why us?",
+    why_p:"We deliver a precise and organized experience that helps projects present space, details, and content in a professional, shareable format.",
+
+    call_h:"Goals, in brief",
+    call_p:"We support projects in Iraq through a realistic digital experience that upgrades presentation, strengthens perception, and enables smarter marketing.",
+
+    g1_h:"Goal 01",
+    g1_1:"Increase project value through a realistic, detailed presentation.",
+    g1_2:"Build customer trust before an in-person visit.",
+
+    g2_h:"Goal 02",
+    g2_1:"Support marketing with shareable, high-impact content.",
+    g2_2:"Reduce decision time and improve customer experience.",
+
+    g3_h:"Goal 03",
+    g3_1:"Present Iraqi projects in a modern, up-to-date way.",
+    g3_2:"Open wider reach to local and international audiences."
+  }
+};
+
+const langBtn = document.getElementById("langBtn");
+
+function applyLang(lang){
+  const dir = (lang === "ar") ? "rtl" : "ltr";
+  document.documentElement.setAttribute("dir", dir);
+  document.documentElement.setAttribute("data-dir", dir);
+  document.documentElement.setAttribute("lang", lang);
+
+  const dict = I18N[lang] || I18N.ar;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(dict[k]) el.textContent = dict[k];
+  });
+
+  if(langBtn) langBtn.textContent = (lang === "ar") ? "EN" : "AR";
+}
+
+let lang = localStorage.getItem("abaad_lang") || "ar";
+applyLang(lang);
+
+if(langBtn){
+  langBtn.addEventListener("click", ()=>{
+    lang = (lang === "ar") ? "en" : "ar";
+    localStorage.setItem("abaad_lang", lang);
+    applyLang(lang);
+  });
+}
+</script><!-- FOOTER (Global) -->
+<footer class="siteFooter" id="contact" role="contentinfo">
+  <div class="wrap fWrap">
+
+    <!-- CTA BAR -->
+    <section class="fCta" aria-label="CTA">
+      <div class="fCta__text">
+        <h3 data-i18n="f_cta_title">جاهزين نخلي مشروعك ينشاف قبل الزيارة</h3>
+        <p data-i18n="f_cta_desc">راسلنا الآن وخلي فريقنا يقترح عليك أفضل طريقة للعرض والتسويق.</p>
+      </div>
+
+      <div class="fCta__actions">
+        <a class="fBtn fBtn--primary" href="https://wa.me/9647770350030" target="_blank" rel="noopener"
+           data-i18n="f_cta_whatsapp">تواصل واتساب</a>
+        <a class="fBtn" href="mailto:abaadaliraq07@gmail.com" data-i18n="f_cta_email">راسلنا ايميل</a>
+      </div>
+    </section>
+
+    <!-- MAIN FOOTER GRID -->
+    <section class="fGrid" aria-label="Footer content">
+
+      <!-- Brand / About -->
+      <div class="fCol">
+        <div class="fBrand">
+          <img class="fLogo" src="logo.png" alt="">
+          <div class="fBrand__text">
+            <strong data-i18n="brand_name">أبعاد العراق</strong>
+            <span>Virtual Tours</span>
+          </div>
+        </div>
+        <p class="fNote" data-i18n="f_note">
+          جولات افتراضية تفاعلية ترفع قيمة المشروع وتختصر قرار العميل.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="fCol">
+        <h4 class="fTitle" data-i18n="f_contact">تواصل</h4>
+
+        <div class="fRow">
+          <span class="fKey" data-i18n="f_phone">هاتف</span>
+          <a class="fVal" href="tel:+9647770350030">+964 777 035 0030</a>
+        </div>
+
+        <div class="fRow">
+          <span class="fKey">WhatsApp</span>
+          <a class="fVal" href="https://wa.me/9647770350030" target="_blank" rel="noopener">+964 777 035 0030</a>
+        </div>
+
+        <div class="fRow">
+          <span class="fKey">Email</span>
+          <a class="fVal" href="mailto:abaadaliraq07@gmail.com">abaadaliraq07@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="fCol">
+        <h4 class="fTitle" data-i18n="f_social">مواقع التواصل</h4>
+
+        <div class="fIcons" aria-label="Social links">
+          <a class="fIcon" href="https://web.facebook.com/aliraqdiementions" target="_blank" rel="noopener" aria-label="Facebook">
+            <!-- fb -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.2c0-.9.3-1.6 1.6-1.6H16.8V5c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.8v8h3.7z"/></svg>
+            <span>Facebook</span>
+          </a>
+
+          <a class="fIcon" href="https://instagram.com/abaad.aliraq" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- ig -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.8-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+            <span>Instagram</span>
+          </a>
+
+          <a class="fIcon" href="https://youtube.com/@abaad.aliraq" target="_blank" rel="noopener" aria-label="YouTube">
+            <!-- yt -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.8 4.6 12 4.6 12 4.6s-5.8 0-7.5.5A3 3 0 0 0 2.4 7.2 31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.7.5 7.5.5 7.5.5s5.8 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10.2 15.3V8.7L15.9 12l-5.7 3.3Z"/></svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom bar -->
+    <section class="fBottom">
+      <div class="fCopy">
+        <span>©</span> <span data-i18n="brand_name">أبعاد العراق</span> <span id="year"></span>
+      </div>
+
+      <div class="fLinks">
+        <a href="privacy.html" data-i18n="f_privacy">سياسة الخصوصية</a>
+        <a href="terms.html" data-i18n="f_terms">الشروط</a>
+      </div>
+    </section>
+
+  </div>
+</footer>
+
+
+</body>
+</html>

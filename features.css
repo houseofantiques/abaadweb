@@ -1,0 +1,683 @@
+/* =========================
+   FEATURES — Premium Layout Fix (V2)
+   هدفه: صور أصغر + تايبوجرافي راقية + توزيع احترافي
+========================= */
+
+:root{
+  --bg: #e7e7e7;
+  --ink: #101214;
+  --muted: rgba(16,18,20,.70);
+
+  --glass: rgba(255,255,255,.30);
+  --stroke: rgba(255,255,255,.55);
+  --shadow: 0 18px 55px rgba(0,0,0,.10);
+
+  --r: 18px;
+}
+
+/* page */
+.page--features{
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* container safety (if your global container is wide) */
+.page--features .container{
+  max-width: 1180px;
+}
+
+/* --------------- HERO --------------- */
+.featHero2{
+  padding: 34px 0 18px;
+}
+
+.featHero2__grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 22px;
+  align-items: center;
+}
+
+/* Typography: clean + premium */
+.featKicker{
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.45);
+  margin: 0 0 10px;
+}
+
+.featH1{
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.06;
+}
+
+.featLead{
+  margin: 0 0 14px;
+  max-width: 62ch;
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 15.5px;
+}
+
+.featQuick{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 16px;
+}
+.qChip{
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.55);
+  font-weight: 800;
+  font-size: 13px;
+  color: rgba(0,0,0,.75);
+}
+
+.featActions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons (keep minimal) */
+.pillBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.55);
+  color: #111;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+}
+.pillBtn:hover{ background: rgba(255,255,255,.72); transform: translateY(-1px); }
+.pillBtn--primary{ background:#0f0f10; color:#fff; border-color: rgba(0,0,0,.18); }
+.pillBtn--primary:hover{ opacity:.92; }
+
+/* --------------- IMAGES CONTROL --------------- */
+.imgFrame{
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 14px 45px rgba(0,0,0,.12);
+  background: rgba(0,0,0,.03);
+}
+
+/* ✅ This is the fix: stop giant images */
+.imgFrame--hero{
+  aspect-ratio: 4 / 3;        /* بدل 1/1.05 */
+  max-height: 420px;
+}
+.storyMedia .imgFrame{
+  aspect-ratio: 16 / 10;
+  max-height: 360px;
+}
+
+.imgFrame img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+/* badge: smaller, calmer */
+.floatBadge{
+  position:absolute;
+  bottom: 12px;
+  inset-inline-start: 12px;
+  padding: 9px 11px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.34);
+  border: 1px solid rgba(255,255,255,.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 35px rgba(0,0,0,.12);
+  display:flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.floatBadge__num{ font-weight: 900; font-size: 18px; }
+.floatBadge__txt{ font-weight: 800; opacity: .85; font-size: 12px; }
+
+/* --------------- SECTION HEAD --------------- */
+.featScroll{
+  padding: 18px 0 54px;
+}
+
+.featHead2{
+  text-align: center;
+  margin: 8px 0 18px;
+}
+.featH2{
+  margin: 0 0 8px;
+  font-size: clamp(20px, 2.5vw, 30px);
+  line-height: 1.12;
+}
+.featSub{
+  margin: 0 auto;
+  max-width: 70ch;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14.5px;
+}
+
+/* --------------- STORY BLOCKS --------------- */
+.storyBlock{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+/* Glass card: lighter + more premium */
+.glass,
+.storyCopy{
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--r);
+}
+
+.storyCopy{
+  padding: 16px 16px 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* remove big highlight that makes it look cheap */
+.storyCopy:before{ content:none; }
+
+.storyTop{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.storyNum{
+  font-weight: 900;
+  opacity: .35;
+  letter-spacing: .08em;
+  font-size: 12px;
+}
+
+.storyTitle{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.storyList{
+  margin: 0;
+  padding-inline-start: 18px;
+  display:grid;
+  gap: 9px;
+  color: rgba(0,0,0,.72);
+  line-height: 1.75;
+  font-size: 14.5px;
+}
+
+/* --------------- CTA --------------- */
+.featCta2{
+  padding: 10px 0 70px;
+}
+
+.ctaPanel{
+  padding: 20px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 14px;
+  border-radius: calc(var(--r) + 6px);
+}
+
+.ctaTitle{
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 900;
+}
+.ctaText{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 72ch;
+  font-size: 14.5px;
+}
+.ctaActions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* --------------- Responsive --------------- */
+@media (max-width: 980px){
+  .featHero2__grid{ grid-template-columns: 1fr; }
+  .imgFrame--hero{ max-height: 320px; }
+  .storyBlock{ grid-template-columns: 1fr; }
+  .storyMedia .imgFrame{ max-height: 280px; }
+  .ctaPanel{ flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 520px){
+  .featHero2{ padding-top: 22px; }
+  .featLead{ font-size: 15px; }
+  .qChip{ font-size: 12.5px; }
+  .storyCopy{ padding: 14px; }
+}
+/* =========================
+   CENTERING FIX (RTL / LTR SAFE)
+========================= */
+
+/* اجبار كل سكشن يكون متمركز فعلياً */
+.page--features section,
+.page--features .featHero2,
+.page--features .featScroll,
+.page--features .featCta2{
+  display: flex;
+  justify-content: center;
+}
+
+/* الكونتينر الحقيقي */
+.page--features .container{
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* HERO GRID */
+.featHero2__grid{
+  margin-inline: auto;
+  width: 100%;
+  justify-items: center;
+}
+
+/* النص داخل الهيرو */
+.featHero2__grid > div{
+  width: 100%;
+  max-width: 520px;
+}
+
+/* الصورة داخل الهيرو */
+.imgFrame--hero{
+  margin-inline: auto;
+}
+
+/* STORY BLOCKS */
+.storyBlock{
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* كل عمود بالنص والصورة */
+.storyBlock > *{
+  margin-inline: auto;
+}
+
+/* كاردات الزجاج */
+.storyCopy,
+.glass{
+  margin-inline: auto;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* الصورة داخل الستوري */
+.storyMedia{
+  display: flex;
+  justify-content: center;
+}
+
+/* العناوين الوسط */
+.featHead2{
+  margin-inline: auto;
+}
+
+/* CTA */
+.ctaPanel{
+  margin-inline: auto;
+  max-width: 1100px;
+}
+
+/* =========================
+   MOBILE — CENTER CLEAN
+========================= */
+@media (max-width: 980px){
+  .featHero2__grid,
+  .storyBlock{
+    justify-items: center;
+    text-align: center;
+  }
+
+  .featLead,
+  .featSub,
+  .ctaText{
+    margin-inline: auto;
+  }
+}
+/* =========================
+   Card headings alignment (RTL/LTR)
+========================= */
+
+/* نلغي space-between اللي يسحب العنوان */
+.storyTop{
+  justify-content: flex-start !important;
+  gap: 12px !important;
+}
+
+/* الرقم يكون دائماً "طرف" حسب اللغة */
+html[dir="rtl"] .storyNum{ margin-inline-start: auto; } /* يروح يسار */
+html[dir="ltr"] .storyNum{ margin-inline-start: auto; } /* يروح يمين */
+
+/* العنوان يكون بمحاذاة النص دائماً */
+.storyTitle{
+  text-align: start !important;
+  width: 100%;
+}
+/* =========================
+   TOPBAR FIX (features page only)
+   يمنع features.css من تخريب الهيدر
+========================= */
+
+.page--features .topbar,
+.page--features header.topbar,
+.page--features .topbar__inner{
+  display: flex !important;
+  align-items: center !important;
+}
+
+.page--features .topbar__inner{
+  justify-content: space-between !important;
+  gap: 16px !important;
+  padding-inline: 18px !important;
+}
+
+/* الروابط لا تتلاصق */
+.page--features .topnav{
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* كل رابط */
+.page--features .topnav .navlink{
+  white-space: nowrap !important;
+  padding: 10px 12px !important;
+  border-radius: 999px !important;
+}
+
+/* زر اللغة مثل بقية الصفحات */
+.page--features .langSwitch{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex: 0 0 auto !important;
+}
+
+/* الموبايل: تقليل المسافات بدون ما يلزك */
+@media (max-width: 900px){
+  .page--features .topbar__inner{
+    gap: 10px !important;
+    padding-inline: 12px !important;
+  }
+  .page--features .topnav{
+    gap: 10px !important;
+  }
+  .page--features .topnav .navlink{
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+  }
+}
+/* =========================
+   TOPBAR = SAME AS HOME
+   (features page only)
+========================= */
+
+/* 1) امنع اي width غريب/سنترة غلط */
+.page--features .topbar{
+  width: 100% !important;
+}
+
+/* 2) خليه نفس عرض الصفحة الرئيسية (حاوية وسط) */
+.page--features .topbar__inner{
+  max-width: 1200px !important;   /* إذا الرئيسية عندك 1100/1140 غيره لنفس الرقم */
+  margin-inline: auto !important;
+  width: 100% !important;
+  padding-inline: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+}
+
+/* 3) nav لا يتلاصق */
+.page--features .topnav{
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex-wrap: nowrap !important;
+  margin: 0 !important;
+}
+
+/* 4) زر اللغة ما يدفع كلشي */
+.page--features .langSwitch{
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+/* موبايل */
+@media (max-width: 900px){
+  .page--features .topbar__inner{
+    padding-inline: 12px !important;
+    gap: 10px !important;
+  }
+  .page--features .topnav{ gap: 10px !important; }
+}
+/* =========================
+   FONT OVERRIDE (features only)
+========================= */
+.page--features{
+  font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* لما تتحول EN يصير dir=ltr عادة */
+html[dir="ltr"] .page--features{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* شوية تنعيم */
+.page--features h1, .page--features h2, .page--features h3{
+  letter-spacing: 0 !important;
+  text-rendering: geometricPrecision;
+}
+/* =========================
+   FOOTER FIX (features only)
+========================= */
+
+.page--features .siteFooter{
+  margin-top: 40px;
+}
+
+/* خلي الفوتر ياخذ نفس سنترة الصفحة */
+.page--features .siteFooter .fWrap,
+.page--features .siteFooter .wrap{
+  max-width: 1200px !important;
+  margin-inline: auto !important;
+  padding-inline: 14px !important;
+}
+
+/* الشبكة: ديسكتوب */
+.page--features .siteFooter .fGrid{
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr 1fr !important;
+  gap: 14px !important;
+  align-items: start !important;
+}
+
+/* الكروت داخل الفوتر */
+.page--features .siteFooter .fCol{
+  border-radius: 18px !important;
+  padding: 14px !important;
+  background: rgba(255,255,255,.55) !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+  box-shadow: 0 14px 40px rgba(0,0,0,.08) !important;
+}
+
+/* نصوص الفوتر */
+.page--features .siteFooter .fTitle{
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  margin: 0 0 10px !important;
+}
+
+.page--features .siteFooter .fNote,
+.page--features .siteFooter .fRow,
+.page--features .siteFooter .fVal{
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+/* الأيقونات: خليها عمودية ومريحة */
+.page--features .siteFooter .fIcons{
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.page--features .siteFooter .fIcon{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  padding: 10px 12px !important;
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.65) !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+}
+
+/* CTA بالهاتف: يخلي الأزرار تحت بعض بدل تمدد */
+@media (max-width: 900px){
+  .page--features .siteFooter .fCta{
+    display: grid !important;
+    gap: 12px !important;
+  }
+  .page--features .siteFooter .fCta__actions{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+}
+
+/* موبايل: الفوتر يصير عمود واحد مرتب */
+@media (max-width: 700px){
+  .page--features .siteFooter .fGrid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .page--features .siteFooter .fBottom{
+    display: grid !important;
+    gap: 10px !important;
+    text-align: center !important;
+  }
+
+  /* خفف ارتفاع الكتل */
+  .page--features .siteFooter .fCol{
+    padding: 12px !important;
+  }
+}
+html { scroll-behavior: smooth; }
+/* =========================
+   TOPBAR FIX (features only)
+========================= */
+
+.page--features .topbar{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Desktop / general */
+.page--features .topbar__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* خلي الروابط بالوسط وتاخذ مساحة */
+.page--features .topnav{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* زر اللغة */
+.page--features .langSwitch{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+/* =========================
+   Mobile layout
+========================= */
+@media (max-width: 860px){
+  .page--features .topbar__inner{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand actions"
+      "nav   nav";
+    gap: 10px;
+    padding-inline: 12px;
+  }
+
+  .page--features .brand{ grid-area: brand; }
+  .page--features .langSwitch{ grid-area: actions; }
+
+  /* الروابط سطر واحد + سكرول أفقي بدل ما تنكسر سطرين */
+  .page--features .topnav{
+    grid-area: nav;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+  .page--features .topnav::-webkit-scrollbar{ display:none; }
+
+  .page--features .topnav .navlink{
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  /* خففي حجم اللوغو نصياً بالموبايل حتى ما يزاحم */
+  .page--features .brand__txt strong{ font-size: 14px; }
+  .page--features .brand__txt em{ font-size: 12px; opacity: .75; }
+}
+
+/* أصغر شاشة */
+@media (max-width: 420px){
+  .page--features .topbar__inner{ gap: 8px; }
+  .page--features .topnav{ gap: 10px; }
+}
