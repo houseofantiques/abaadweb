@@ -827,3 +827,37 @@ footer .wrap{
     max-height: 40px !important;
   }
 }
+@media (max-width: 640px){
+
+  header:has(nav){
+    overflow: hidden;
+  }
+
+  header:has(nav) nav{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    align-items: center !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  header:has(nav) nav::-webkit-scrollbar{ display:none; }
+
+  header:has(nav) nav a{
+    white-space: nowrap !important;
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+  }
+
+  /* زر اللغة إذا داخل الهيدر */
+  header:has(nav) .langBtn,
+  header:has(nav) .lang,
+  header:has(nav) .langSwitch,
+  header:has(nav) button{
+    font-size: 12px !important;
+  }
+}
+
