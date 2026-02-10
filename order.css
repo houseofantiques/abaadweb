@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900;1000&display=swap');
+:root{
+  --bg: #e9e4dc;
+  --ink: #111;
+  --muted: rgba(0,0,0,.64);
+
+  --glass: rgba(255,255,255,.58);
+  --glass2: rgba(255,255,255,.42);
+  --stroke: rgba(0,0,0,.10);
+
+  --shadow: 0 18px 55px rgba(0,0,0,.16);
+  --shadowSoft: 0 10px 28px rgba(0,0,0,.12);
+
+  --radius: 22px;
+  --radiusLg: 28px;
+
+  --accent: #b0161b; /* أحمر أبعاد العراق */
+  --accent2: rgba(176,22,27,.12);
+
+  --wrap: min(1120px, calc(100% - 28px));
+}
+
+*{box-sizing:border-box}
+
+html,body{height:100%}
+
+body{
+  margin:0;
+  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(1200px 600px at 50% 10%, rgba(255,255,255,.75), transparent 55%),
+              linear-gradient(180deg, #efe9e1, #e6e0d8 60%, #e9e4dc);
+}
+
+
+/* WRAP */
+.wrap{width: var(--wrap); margin-inline:auto}
+
+/* TOPBAR */
+.topbar{
+  position: sticky;
+  top: 12px;
+  z-index: 50;
+  padding: 0;
+}
+.topbar__inner{
+  width: var(--wrap);
+  margin: 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  padding: 12px 14px;
+  box-shadow: var(--shadowSoft);
+}
+
+.topbar__nav{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.topbar__link{
+  text-decoration:none;
+  color: rgba(0,0,0,.72);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+}
+.topbar__link:hover{
+  background: rgba(255,255,255,.55);
+}
+
+.langPill{
+  display:flex;
+  background: rgba(255,255,255,.55);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  overflow:hidden;
+}
+.langPill__btn{
+  appearance:none;
+  border:0;
+  background: transparent;
+  padding: 8px 10px;
+  font-weight: 800;
+  font-size: 12px;
+  cursor:pointer;
+  color: rgba(0,0,0,.62);
+}
+.langPill__btn.isActive{
+  color: #fff;
+  background: rgba(0,0,0,.78);
+}
+
+/* HERO */
+.oHero{margin-top: 18px}
+.oHero__media{
+  position: relative;
+  height: clamp(340px, 52vh, 520px);
+  border-radius: var(--radiusLg);
+  overflow:hidden;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.oHero__img{
+  width:100%; height:100%;
+  object-fit: cover;
+  object-position: center;
+  display:block;
+  transform: scale(1.01);
+}
+.oHero__shade{
+  position:absolute; inset:0;
+  background: linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.12) 52%, rgba(0,0,0,.55));
+}
+.oHero__content{
+  position:absolute; inset:0;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: clamp(18px, 3.2vw, 28px);
+  color:#fff;
+}
+.oHero__tag{
+  align-self: flex-start;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.22);
+  backdrop-filter: blur(10px);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+}
+.oHero__title{
+  margin:0;
+  font-size: clamp(22px, 3.2vw, 38px);
+  letter-spacing: .2px;
+}
+.oHero__desc{
+  margin:0;
+  max-width: 70ch;
+  color: rgba(255,255,255,.86);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.oHero__cta{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  border-radius: 999px;
+  padding: 12px 14px;
+  font-weight: 900;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor:pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.btn:active{transform: translateY(1px)}
+.btn--primary{
+  background: var(--accent);
+  color:#fff;
+  box-shadow: 0 14px 35px rgba(176,22,27,.28);
+}
+.btn--primary:hover{background: #9f1317}
+.btn--ghost{
+  background: rgba(255,255,255,.14);
+  color:#fff;
+  border-color: rgba(255,255,255,.24);
+}
+.btn--ghost:hover{background: rgba(255,255,255,.18)}
+
+/* SECTIONS */
+.oSection{
+  margin: 18px auto 0;
+  padding: 18px 0;
+}
+.oHead{
+  display:flex;
+  align-items:flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.oH2{
+  margin:0;
+  font-size: 20px;
+  letter-spacing: .2px;
+}
+.oP{
+  margin:0;
+  color: var(--muted);
+  font-weight: 650;
+  line-height: 1.8;
+}
+
+/* Steps */
+.oSteps{
+  list-style:none;
+  margin: 0;
+  padding: 0;
+  display:grid;
+  gap: 10px;
+}
+.oStep{
+  display:flex;
+  gap: 12px;
+  align-items:flex-start;
+
+  background: var(--glass2);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadowSoft);
+  padding: 14px;
+}
+.oStep__n{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 1000;
+  background: rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,.10);
+}
+.oStep__h{
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+.oStep__p{
+  margin:0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 650;
+}
+
+/* Split */
+.oSection--split{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.oCard{
+  background: var(--glass2);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radiusLg);
+  box-shadow: var(--shadowSoft);
+  padding: 16px;
+}
+.oBullets{margin-top: 10px; display:grid; gap: 10px}
+.oBullet{display:flex; gap: 10px; align-items:flex-start}
+.oDot{
+  width: 10px; height: 10px;
+  border-radius: 99px;
+  margin-top: 8px;
+  background: var(--accent);
+  box-shadow: 0 8px 18px rgba(176,22,27,.25);
+}
+
+/* FORM */
+.oForm{
+  background: var(--glass2);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radiusLg);
+  box-shadow: var(--shadowSoft);
+  padding: 16px;
+}
+.oGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.oField{display:grid; gap: 8px}
+.oField--full{grid-column: 1 / -1}
+.oLabel{
+  font-weight: 900;
+  font-size: 13px;
+  color: rgba(0,0,0,.72);
+}
+.oInput, .oTextarea{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.72);
+  outline: none;
+  font-weight: 700;
+}
+.oInput:focus, .oTextarea:focus{
+  border-color: rgba(176,22,27,.45);
+  box-shadow: 0 0 0 4px var(--accent2);
+}
+.oActions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.oFine{
+  margin-top: 10px;
+  color: rgba(0,0,0,.55);
+  font-weight: 650;
+  line-height: 1.7;
+}
+
+.uFooter{
+  margin-top: 26px;
+  background: rgba(251,250,247,.78);
+  border-top: 1px solid rgba(0,0,0,.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color-scheme: light;
+}
+
+/* force readable text (prevents dark-mode auto inversion issues) */
+.uFooter,
+.uFooter *{
+  color: #151515 !important;
+}
+
+.uFooter .wrap{
+  padding: 18px 0 14px;
+}
+
+.uFooter__grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+  padding: 6px 0 14px;
+}
+
+.uFooter__h{
+  margin: 0 0 12px;
+  font-weight: 900;
+  font-size: 14px;
+  color: #151515 !important;
+}
+
+.uFooter__link{
+  display:block;
+  padding: 7px 0;
+  font-weight: 800;
+  color: rgba(0,0,0,.70) !important;
+  transition: .15s ease;
+}
+.uFooter__link:hover{
+  color: rgba(0,0,0,.95) !important;
+  transform: translateX(-1px);
+}
+
+.uFooter__social{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items:center;
+  margin: 6px 0 10px;
+}
+
+/* ICON BUTTON */
+.uFooter__ico{
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+
+  background: rgba(176,139,87,.10);
+  border: 1px solid rgba(176,139,87,.32);
+
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+/* RED/BRAND ICON FILL */
+.uFooter__ico svg{
+  width: 20px;
+  height: 20px;
+  fill: #e11d48 !important; /* أحمر */
+  opacity: 1 !important;
+}
+
+.uFooter__ico:hover{
+  transform: translateY(-2px);
+  background: rgba(225,29,72,.10);
+  border-color: rgba(225,29,72,.35);
+}
+
+.uFooter__contactMini{
+  display:grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.uFooter__miniLink{
+  font-weight: 800;
+  color: rgba(0,0,0,.70) !important;
+}
+.uFooter__miniLink:hover{
+  color: rgba(0,0,0,.95) !important;
+  text-decoration: underline;
+}
+
+.uFooter__bottom{
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,.10);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  font-weight: 900;
+  font-size: 12.5px;
+  color: rgba(0,0,0,.70) !important;
+}
+.uFooter__sep{ opacity:.5; }
+
+/* =========================
+   Mobile (shorter + 2 columns)
+========================= */
+@media (max-width: 820px){
+  .uFooter .wrap{
+    padding: 14px 0 12px;
+  }
+
+  .uFooter__grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 14px;
+    padding: 6px 0 10px;
+  }
+
+  .uFooter__h{
+    margin-bottom: 8px;
+    font-size: 13.5px;
+  }
+
+  .uFooter__link{
+    padding: 6px 0;
+    font-size: 13px;
+  }
+
+  .uFooter__contactMini{
+    display:none; /* يقلل طول الفوتر */
+  }
+
+  .uFooter__ico{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* very small */
+@media (max-width: 420px){
+  .uFooter__grid{
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   FEATURES footer fix — match About page
+   - social icons horizontal + on the right
+   - no other footer changes
+========================================================= */
+
+/* خليه RTL مضبوط */
+.uFooter__col[aria-label="Social"]{
+  text-align: right;
+  justify-self: end;   /* يحط العمود باليمين داخل grid */
+}
+
+/* صف أيقونات عرضي */
+.uFooter__col[aria-label="Social"] .uFooter__social{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; /* على اليمين */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* معلومات الايميل/الهاتف تكون يمين وتحت */
+.uFooter__col[aria-label="Social"] .uFooter__contactMini{
+  text-align: right;
+  justify-items: end;
+}
+
+/* موبايل: نفس فكرة النبذة */
+@media (max-width: 820px){
+  .uFooter__col[aria-label="Social"]{
+    justify-self: stretch;
+  }
+  .uFooter__col[aria-label="Social"] .uFooter__social{
+    justify-content: flex-end;
+  }
+}
+/* =========================================================
+   TOPBAR — make text lighter & less dominant
+========================================================= */
+
+/* روابط التوب بار */
+.topbar__nav a{
+  font-weight: 600 !important;          /* كان 900 — ثقيل زيادة */
+  color: rgba(0,0,0,.65) !important;    /* أخف بصرياً */
+  letter-spacing: .2px;                 /* ينعّم الإحساس */
+}
+
+/* hover: يبرز بدون ما يصير فاقع */
+.topbar__nav a:hover{
+  color: rgba(0,0,0,.85) !important;
+  background: rgba(0,0,0,.04);
+}
+
+/* العنصر النشط (الصفحة الحالية) */
+.topbar__nav a.active,
+.topbar__nav a[aria-current="page"]{
+  font-weight: 700 !important;
+  color: rgba(0,0,0,.95) !important;
+  background: transparent !important;
+}
+
+/* زر EN */
+.topbar .langBtn,
+.topbar .lang,
+.topbar .langSwitch{
+  font-weight: 600 !important;
+  color: rgba(0,0,0,.6) !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+
+body{
+  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/* نفس شريط about: كبسولة زجاج */
+.gTopbar{
+  position: sticky;
+  top: 14px;
+  z-index: 999;
+}
+
+.gTopbar__inner{
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  padding: 12px 16px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.10);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.14);
+}
+
+/* الروابط بالوسط */
+.gTopbar__nav{
+  justify-self: center;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.gTopbar__link{
+  text-decoration: none;
+  color: rgba(0,0,0,.70);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  transition: background .12s ease, color .12s ease;
+}
+
+.gTopbar__link:hover{
+  background: rgba(255,255,255,.6);
+  color: rgba(0,0,0,.92);
+}
+
+/* زر اللغة واحد - دائري مثل الصورة */
+.gTopbar__lang{
+  justify-self: end;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.65);
+
+  font-weight: 900;
+  font-size: 12px;
+  color: rgba(0,0,0,.78);
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+}
+
+.gTopbar__lang:hover{
+  background: rgba(255,255,255,.78);
+}
+
+/* موبايل: يبقى سطر واحد */
+@media (max-width: 560px){
+  .gTopbar{ top: 10px; }
+
+  .gTopbar__inner{
+    border-radius: 22px;
+    padding: 10px 10px;
+  }
+
+  .gTopbar__nav{
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .gTopbar__link{
+    font-size: 13px;
+    padding: 8px 8px;
+    white-space: nowrap;
+  }
+
+  .gTopbar__lang{
+    width: 40px;
+    height: 40px;
+  }
+}
+.gTopbar__lang{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.65);
+
+  font-family: "Cairo", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  color: rgba(0,0,0,.75);
+
+  cursor: pointer;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+}
+
+.gTopbar__lang:hover{
+  background: rgba(255,255,255,.8);
+}

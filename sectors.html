@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>أبعاد العراق — القطاعات</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sectors.css">
+</head>
+
+<body class="sectorsBody">
+
+<!-- TOPBAR (موحد) -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+
+    <div class="topbar__left">
+      <button class="pillBtn" id="langBtn" type="button">EN</button>
+    </div>
+
+    <nav class="topbar__nav" aria-label="main">
+      <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" data-i18n="nav_about">نبذة عنا</a>
+      <a href="projects.html" data-i18n="nav_projects">مشاريعنا</a>
+      <a href="features.html" data-i18n="nav_features">مميزات الجولة</a>
+      <a class="active" href="sectors.html" aria-current="page" data-i18n="nav_sectors">القطاعات</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="secHero" aria-label="Sectors intro">
+    <div class="secHero__card">
+      <div class="secHero__kicker">
+        <span class="pill" data-i18n="sectors_pill">القطاعات</span>
+        <span class="pill pill--soft" data-i18n="sectors_pill2">تسويق + توثيق</span>
+      </div>
+
+      <h1 class="secHero__title" data-i18n="sectors_title">
+        القطاعات التي تستفيد من الجولة الافتراضية
+      </h1>
+
+      <p class="secHero__desc" data-i18n="sectors_desc">
+        الجولات الافتراضية ليست “عرض” فقط؛ هي أداة تسويق قوية + توثيق دقيق. لذلك نستخدمها لمشاريع مختلفة: من العقارات والمعارض إلى المصانع والتعليم والسياحة والتراث.
+      </p>
+
+      <div class="secHero__chips" aria-hidden="true">
+        <span class="chip" data-i18n="chip_fast">تجربة واضحة</span>
+        <span class="chip" data-i18n="chip_share">جاهز للمشاركة</span>
+        <span class="chip" data-i18n="chip_docs">توثيق قياسات</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section class="secGrid" aria-label="Sectors grid">
+
+    <!-- 01 Real Estate -->
+    <article class="secCard" id="realestate">
+      <div class="secCard__media">
+        <!-- بدّل الصورة -->
+        <img src="hero-vr.jpg" alt="">
+        <span class="secCard__badge" data-i18n="badge_marketing">تسويق</span>
+      </div>
+
+      <div class="secCard__body">
+        <div class="secCard__head">
+          <div class="secCard__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 3 10v11h6v-7h6v7h6V10L12 3Zm7 16h-2v-7H7v7H5v-8l7-5 7 5v8Z"/></svg>
+          </div>
+          <h3 class="secCard__title" data-i18n="sec_realestate">العقارات</h3>
+        </div>
+
+        <p class="secCard__desc" data-i18n="sec_realestate_desc">
+          مثالية للشقق، المجمعات، المولات، والمكاتب. تخلي العميل يشوف التفاصيل ويتخذ قرار أسرع قبل الزيارة.
+        </p>
+
+        <div class="secCard__cols">
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_realestate_m1">رفع قيمة العرض وإظهار التفاصيل</li>
+              <li data-i18n="sec_realestate_m2">تقليل الاستفسارات المتكررة وتسريع القرار</li>
+              <li data-i18n="sec_realestate_m3">محتوى جاهز للمشاركة على السوشيال</li>
+            </ul>
+          </div>
+
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_realestate_d1">توثيق حالة العقار قبل/بعد</li>
+              <li data-i18n="sec_realestate_d2">دعم القياسات والفراغات بصرياً</li>
+              <li data-i18n="sec_realestate_d3">مرجع سريع لفِرق التنفيذ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 Exhibitions -->
+    <article class="secCard" id="exhibitions">
+      <div class="secCard__media">
+        <img src="hero-vr-1.jpg" alt="">
+        <span class="secCard__badge secCard__badge--docs" data-i18n="badge_docs">توثيق</span>
+      </div>
+
+      <div class="secCard__body">
+        <div class="secCard__head">
+          <div class="secCard__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16v10H4V7Zm2 2v6h12V9H6Zm-2 12h16v2H4v-2Z"/></svg>
+          </div>
+          <h3 class="secCard__title" data-i18n="sec_exhibitions">المعارض</h3>
+        </div>
+
+        <p class="secCard__desc" data-i18n="sec_exhibitions_desc">
+          معارض سيارات، أثاث، معارض فنية… الجولة تحفظ “الفعالية” حتى بعد انتهائها وتخليها قابلة للمشاركة.
+        </p>
+
+        <div class="secCard__cols">
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_exhibitions_m1">عرض المعرض للجمهور خارج المدينة</li>
+              <li data-i18n="sec_exhibitions_m2">رفع التفاعل والمشاركات</li>
+              <li data-i18n="sec_exhibitions_m3">محتوى قوي للإعلانات والرعاة</li>
+            </ul>
+          </div>
+
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_exhibitions_d1">أرشفة تصميم المعرض وتوزيع الأجنحة</li>
+              <li data-i18n="sec_exhibitions_d2">توثيق الأعمال/المنتجات المعروضة</li>
+              <li data-i18n="sec_exhibitions_d3">مرجع للنسخ القادمة من الفعالية</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 Factories -->
+    <article class="secCard" id="factories">
+      <div class="secCard__media">
+        <img src="assets/sectors/factory.jpg" alt="">
+        <span class="secCard__badge" data-i18n="badge_marketing">تسويق</span>
+      </div>
+
+      <div class="secCard__body">
+        <div class="secCard__head">
+          <div class="secCard__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 21V9l6 3V9l6 3V9l6 3v9H3Zm2-2h14v-6.8l-4-2v3l-6-3v3l-4-2V19Z"/></svg>
+          </div>
+          <h3 class="secCard__title" data-i18n="sec_factories">المصانع</h3>
+        </div>
+
+        <p class="secCard__desc" data-i18n="sec_factories_desc">
+          مفيدة للمستثمرين والعملاء: عرض خطوط الإنتاج والمخازن بطريقة احترافية تعزز الثقة.
+        </p>
+
+        <div class="secCard__cols">
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_factories_m1">عروض استثمارية أقوى</li>
+              <li data-i18n="sec_factories_m2">تعزيز الثقة والشفافية</li>
+              <li data-i18n="sec_factories_m3">عرض جاهزية المصنع للعملاء</li>
+            </ul>
+          </div>
+
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_factories_d1">توثيق خطوط الإنتاج والمعدات</li>
+              <li data-i18n="sec_factories_d2">مرجع لإدارة السلامة والجودة</li>
+              <li data-i18n="sec_factories_d3">توثيق توسعات/تغييرات المكان</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 Engineers -->
+    <article class="secCard" id="engineers">
+      <div class="secCard__media">
+        <img src="assets/sectors/engineers.jpg" alt="">
+        <span class="secCard__badge secCard__badge--docs" data-i18n="badge_docs">توثيق</span>
+      </div>
+
+      <div class="secCard__body">
+        <div class="secCard__head">
+          <div class="secCard__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M2 20h20v2H2v-2Zm2-2V6l6-2v5l4-2v5l6-2v10H4Z"/></svg>
+          </div>
+          <h3 class="secCard__title" data-i18n="sec_engineers">المهندسون والمكاتب الهندسية</h3>
+        </div>
+
+        <p class="secCard__desc" data-i18n="sec_engineers_desc">
+          توثيق مراحل التنفيذ وتحويل المشروع إلى ملف عرض “احترافي” يفيد بالعطاءات والبورتفوليو.
+        </p>
+
+        <div class="secCard__cols">
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_engineers_m1">بورتفوليو أقوى للمكتب</li>
+              <li data-i18n="sec_engineers_m2">عرض المشاريع للعميل قبل التسليم</li>
+              <li data-i18n="sec_engineers_m3">محتوى جاهز للنشر</li>
+            </ul>
+          </div>
+
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_engineers_d1">توثيق مراحل التنفيذ</li>
+              <li data-i18n="sec_engineers_d2">مرجع لتفاصيل الموقع والفراغات</li>
+              <li data-i18n="sec_engineers_d3">دعم ملفات التقديم والعطاءات</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 Education -->
+    <article class="secCard" id="education">
+      <div class="secCard__media">
+        <img src="assets/sectors/education.jpg" alt="">
+        <span class="secCard__badge" data-i18n="badge_marketing">تسويق</span>
+      </div>
+
+      <div class="secCard__body">
+        <div class="secCard__head">
+          <div class="secCard__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm0 9.9L5 9l7-3.9L19 9l-7 3.9ZM6 14.4V18c0 1.1 2.7 3 6 3s6-1.9 6-3v-3.6l-6 3.3-6-3.3Z"/></svg>
+          </div>
+          <h3 class="secCard__title" data-i18n="sec_education">الجامعات والمدارس والروضات</h3>
+        </div>
+
+        <p class="secCard__desc" data-i18n="sec_education_desc">
+          تعريف واضح بالمرافق والقاعات والبيئة التعليمية، ويساعد بأقناع أولياء الأمور والطلبة.
+        </p>
+
+        <div class="secCard__cols">
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_education_m1">جذب الطلبة وأولياء الأمور</li>
+              <li data-i18n="sec_education_m2">توضيح القاعات والمختبرات</li>
+              <li data-i18n="sec_education_m3">رفع الثقة بالمؤسسة</li>
+            </ul>
+          </div>
+
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_education_d1">توثيق المرافق</li>
+              <li data-i18n="sec_education_d2">مرجع للإدارة والصيانة</li>
+              <li data-i18n="sec_education_d3">توثيق التطويرات والتغييرات</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 Tourism & Heritage -->
+    <article class="secCard" id="tourism">
+      <div class="secCard__media">
+        <img src="assets/sectors/tourism.jpg" alt="">
+        <span class="secCard__badge secCard__badge--docs" data-i18n="badge_docs">توثيق</span>
+      </div>
+
+      <div class="secCard__body">
+        <div class="secCard__head">
+          <div class="secCard__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+          </div>
+          <h3 class="secCard__title" data-i18n="sec_tourism">السياحة والتراث</h3>
+        </div>
+
+        <p class="secCard__desc" data-i18n="sec_tourism_desc">
+          الأفضل للمواقع الثقافية والتراثية: توثيق دائم + تجربة تشجع الزائر قبل ما يجي.
+        </p>
+
+        <div class="secCard__cols">
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_tourism_m1">زيادة الاهتمام والزيارة</li>
+              <li data-i18n="sec_tourism_m2">نشر التجربة عالمياً</li>
+              <li data-i18n="sec_tourism_m3">محتوى قوي للحملات</li>
+            </ul>
+          </div>
+
+          <div class="secList">
+            <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+            <ul class="secList__ul">
+              <li data-i18n="sec_tourism_d1">توثيق المواقع التاريخية</li>
+              <li data-i18n="sec_tourism_d2">حفظ التفاصيل بصرياً</li>
+              <li data-i18n="sec_tourism_d3">مادة أرشيفية للسنوات</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- 07 Restaurants -->
+<article class="secCard" id="restaurants">
+  <div class="secCard__media">
+    <img src="assets/sectors/restaurants.jpg" alt="">
+    <span class="secCard__badge" data-i18n="badge_marketing">تسويق</span>
+  </div>
+
+  <div class="secCard__body">
+    <div class="secCard__head">
+      <div class="secCard__ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 2h2v9a3 3 0 0 1-3 3H5v8H3V2h2v10h1a1 1 0 0 0 1-1V2Zm14 0v20h-2V13.5c0-1.4-.9-2.7-2.2-3.1l-.8-.3V2h2v6.3l.2.1c1.7.7 2.8 2.4 2.8 4.2V22Z"/>
+        </svg>
+      </div>
+      <h3 class="secCard__title" data-i18n="sec_restaurants">المطاعم</h3>
+    </div>
+
+    <p class="secCard__desc" data-i18n="sec_restaurants_desc">
+      عرض الجلسات والأجواء والتفاصيل قبل الزيارة، وتحويل المكان إلى تجربة “قابلة للمشاركة” لزيادة الحجوزات.
+    </p>
+
+    <div class="secCard__cols">
+      <div class="secList">
+        <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+        <ul class="secList__ul">
+          <li data-i18n="sec_restaurants_m1">إظهار الأجواء والجلسات بطريقة واقعية</li>
+          <li data-i18n="sec_restaurants_m2">رفع الثقة وتحفيز قرار الحجز</li>
+          <li data-i18n="sec_restaurants_m3">محتوى قوي للسوشيال والإعلانات</li>
+        </ul>
+      </div>
+
+      <div class="secList">
+        <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+        <ul class="secList__ul">
+          <li data-i18n="sec_restaurants_d1">توثيق التصميم الداخلي قبل/بعد التحديث</li>
+          <li data-i18n="sec_restaurants_d2">مرجع لتوزيع الطاولات والمساحات</li>
+          <li data-i18n="sec_restaurants_d3">دعم إدارة الفروع عند التوسع</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- 08 Healthcare -->
+<article class="secCard" id="healthcare">
+  <div class="secCard__media">
+    <img src="assets/sectors/healthcare.jpg" alt="">
+    <span class="secCard__badge secCard__badge--docs" data-i18n="badge_docs">توثيق</span>
+  </div>
+
+  <div class="secCard__body">
+    <div class="secCard__head">
+      <div class="secCard__ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M11 2h2v3h3v2h-3v3h-2V7H8V5h3V2Zm-7 9h6v2H6v8H4V11Zm10 0h6v10h-2v-8h-4v-2Zm-8 4h4v2H6v-2Zm10 0h4v2h-4v-2Z"/>
+        </svg>
+      </div>
+      <h3 class="secCard__title" data-i18n="sec_health">القطاع الصحي</h3>
+    </div>
+
+    <p class="secCard__desc" data-i18n="sec_health_desc">
+      للمستشفيات والعيادات والمراكز الطبية: عرض المرافق والخدمات بشكل احترافي يعزز الثقة ويُسهل القرار.
+    </p>
+
+    <div class="secCard__cols">
+      <div class="secList">
+        <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+        <ul class="secList__ul">
+          <li data-i18n="sec_health_m1">تعزيز الثقة عبر عرض المكان بشكل واضح</li>
+          <li data-i18n="sec_health_m2">إظهار الأقسام والخدمات بدون مبالغة</li>
+          <li data-i18n="sec_health_m3">مناسب للمواقع والإعلانات الرسمية</li>
+        </ul>
+      </div>
+
+      <div class="secList">
+        <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+        <ul class="secList__ul">
+          <li data-i18n="sec_health_d1">توثيق المرافق والأجهزة والفراغات</li>
+          <li data-i18n="sec_health_d2">مرجع للإدارة والجودة والسلامة</li>
+          <li data-i18n="sec_health_d3">توثيق التحديثات والتوسعات</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- 09 Conferences & Events Documentation -->
+<article class="secCard" id="events">
+  <div class="secCard__media">
+    <img src="assets/sectors/events.jpg" alt="">
+    <span class="secCard__badge secCard__badge--docs" data-i18n="badge_docs">توثيق</span>
+  </div>
+
+  <div class="secCard__body">
+    <div class="secCard__head">
+      <div class="secCard__ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 2h2v2h6V2h2v2h3v18H2V4h5V2Zm13 6H4v12h16V8ZM5 10h6v2H5v-2Zm0 4h10v2H5v-2Z"/>
+        </svg>
+      </div>
+      <h3 class="secCard__title" data-i18n="sec_events">توثيق المؤتمرات والإيفينتات</h3>
+    </div>
+
+    <p class="secCard__desc" data-i18n="sec_events_desc">
+      توثيق الحدث بصيغة تجربة قابلة للمشاركة بعد انتهائه، مفيد للرعاة والإعلام وإصدارات التقارير.
+    </p>
+
+    <div class="secCard__cols">
+      <div class="secList">
+        <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+        <ul class="secList__ul">
+          <li data-i18n="sec_events_m1">محتوى قوي للتغطية والرعاة</li>
+          <li data-i18n="sec_events_m2">رفع قيمة الحدث للدورات القادمة</li>
+          <li data-i18n="sec_events_m3">مشاركة التجربة للجمهور غير الحاضر</li>
+        </ul>
+      </div>
+
+      <div class="secList">
+        <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+        <ul class="secList__ul">
+          <li data-i18n="sec_events_d1">توثيق القاعات والتجهيزات والتوزيع</li>
+          <li data-i18n="sec_events_d2">أرشفة الأجنحة والمحتوى المعروض</li>
+          <li data-i18n="sec_events_d3">مرجع تنظيمي للنسخ القادمة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- 10 Retail / Shops & Malls -->
+<article class="secCard" id="retail">
+  <div class="secCard__media">
+    <img src="assets/sectors/retail.jpg" alt="">
+    <span class="secCard__badge" data-i18n="badge_marketing">تسويق</span>
+  </div>
+
+  <div class="secCard__body">
+    <div class="secCard__head">
+      <div class="secCard__ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 2h12l2 5v2H4V7l2-5Zm12.3 5L17.6 4H6.4L5.7 7h12.6ZM5 11h14v11H5V11Zm2 2v7h10v-7H7Z"/>
+        </svg>
+      </div>
+      <h3 class="secCard__title" data-i18n="sec_retail">المحلات التجارية والمولات</h3>
+    </div>
+
+    <p class="secCard__desc" data-i18n="sec_retail_desc">
+      عرض تجربة التسوق وتوزيع المحلات والمسارات، وتحويل المكان إلى مادة تسويقية واضحة للمستأجرين والزوار.
+    </p>
+
+    <div class="secCard__cols">
+      <div class="secList">
+        <h4 class="secList__h" data-i18n="sec_m">التسويق</h4>
+        <ul class="secList__ul">
+          <li data-i18n="sec_retail_m1">زيادة جذب الزوار عبر عرض التجربة</li>
+          <li data-i18n="sec_retail_m2">تسويق للمستأجرين وإظهار المواقع</li>
+          <li data-i18n="sec_retail_m3">محتوى جاهز للإعلانات والخرائط</li>
+        </ul>
+      </div>
+
+      <div class="secList">
+        <h4 class="secList__h" data-i18n="sec_d">التوثيق</h4>
+        <ul class="secList__ul">
+          <li data-i18n="sec_retail_d1">توثيق الحالة الداخلية والتصميم</li>
+          <li data-i18n="sec_retail_d2">مرجع للصيانة وإدارة المساحات</li>
+          <li data-i18n="sec_retail_d3">توثيق التغييرات والتأجير</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  </section>
+
+  <!-- CTA -->
+  <section class="secCta" aria-label="CTA">
+    <div class="secCta__card">
+      <h2 class="secCta__h" data-i18n="sectors_cta_h">هل ينتمي مشروعك لأحد هذه القطاعات؟</h2>
+      <p class="secCta__p" data-i18n="sectors_cta_p">
+        تواصل معنا لنقترح لك أفضل طريقة عرض تناسب مشروعك (تسويق + توثيق) وبشكل احترافي.
+      </p>
+      <div class="secCta__actions">
+        <a class="pillBtn pillBtn--primary" href="#siteFooter" data-i18n="nav_contact">تواصل</a>
+        <a class="pillBtn" href="projects.html" data-i18n="nav_projects">مشاريعنا</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER (الموحد اللي عندك) -->
+<footer class="uFooter" id="siteFooter" role="contentinfo">
+  <div class="wrap">
+
+    <div class="uFooter__grid">
+
+      <!-- Help -->
+      <nav class="uFooter__col" aria-label="Help">
+        <h4 class="uFooter__h" data-i18n="f_help">مساعدة</h4>
+        <a class="uFooter__link" href="privacy.html" data-i18n="f_privacy">سياسة الخصوصية</a>
+        <a class="uFooter__link" href="terms.html" data-i18n="f_terms">الشروط</a>
+      </nav>
+
+      <!-- About -->
+      <nav class="uFooter__col" aria-label="About">
+        <h4 class="uFooter__h" data-i18n="f_about">عن الشركة</h4>
+        <a class="uFooter__link" href="about.html" data-i18n="f_a1">من نحن</a>
+        <a class="uFooter__link" href="index.html#partners" data-i18n="f_a2">شركاؤنا</a>
+        <a class="uFooter__link" href="#siteFooter" data-i18n="f_a3">تواصل</a>
+      </nav>
+
+      <!-- Services -->
+      <nav class="uFooter__col" aria-label="Services">
+        <h4 class="uFooter__h" data-i18n="f_services">خدماتنا</h4>
+        <a class="uFooter__link" href="features.html" data-i18n="f_s1">مميزات الجولة</a>
+        <a class="uFooter__link" href="projects.html" data-i18n="f_s2">مشاريعنا</a>
+        <a class="uFooter__link" href="index.html#tours" data-i18n="f_s3">جولاتنا</a>
+      </nav>
+
+      <!-- Social -->
+      <section class="uFooter__col" aria-label="Social">
+        <h4 class="uFooter__h" data-i18n="f_follow">تابعنا</h4>
+
+        <div class="uFooter__social" aria-label="social links">
+          <!-- Email -->
+          <a class="uFooter__ico" href="mailto:abaadaliraq07@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a class="uFooter__ico" href="https://wa.me/9647770350030" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.1L2 22l5.05-1.48A9.98 9.98 0 1 0 12.04 2Zm0 18.1a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-2.95.86.86-2.87-.2-.3A8.12 8.12 0 1 1 12.04 20.1Zm4.73-5.02c-.26-.13-1.52-.75-1.75-.84-.24-.09-.41-.13-.58.13-.17.26-.66.84-.81 1.01-.15.17-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.78-.69-1.31-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5c-.17 0-.45.07-.69.32-.24.26-.9.88-.9 2.15 0 1.27.93 2.5 1.06 2.67.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.47.55.62.2 1.18.17 1.62.1.5-.07 1.52-.62 1.73-1.22.22-.6.22-1.11.15-1.22-.06-.11-.24-.17-.5-.3Z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a class="uFooter__ico" href="https://www.youtube.com/@abaad.aliraq" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.2 31.2 0 0 0 2 12s.1 3 .4 4.8a3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1c.3-1.8.4-4.8.4-4.8s-.1-3-.4-4.8ZM10.4 15.2V8.8L16 12l-5.6 3.2Z"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a class="uFooter__ico" href="https://web.facebook.com/aliraq.dimentions" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.8 22v-8h2.7l.4-3H13.8V9.2c0-.9.3-1.6 1.6-1.6H17V5c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V11H7.2v3h2.6v8h4Z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a class="uFooter__ico" href="https://www.instagram.com/abaad_aliraq/?__pwa=1" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM17.6 6.6a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="uFooter__contactMini">
+          <a class="uFooter__miniLink" href="mailto:abaadaliraq07@gmail.com">abaadaliraq07@gmail.com</a>
+          <a class="uFooter__miniLink" href="https://wa.me/9647770350030" target="_blank" rel="noopener">+964 777 035 0030</a>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="uFooter__bottom">
+      <span>©</span>
+      <span data-i18n="brand_name">أبعاد العراق</span>
+      <span id="year"></span>
+      <span class="uFooter__sep">•</span>
+      <span data-i18n="f_rights">All Rights Reserved</span>
+    </div>
+
+  </div>
+</footer>
+
