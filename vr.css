@@ -1,0 +1,723 @@
+/* =========================
+   VR PAGE (CLEAN RESET)
+   - Glass / Futuristic
+   - 3D depth shadows for media
+   - Fix vrMedia_img sizing (tall + aligned)
+========================= */
+
+:root{
+  --vr-bg: #f6efe2;                 /* نفس جو الصفحة الرئيسي (Beige) */
+  --vr-surface: rgba(255,255,255,.62);
+  --vr-surface2: rgba(255,255,255,.72);
+  --vr-stroke: rgba(20,20,30,.10);
+  --vr-stroke2: rgba(20,20,30,.16);
+  --vr-text: rgba(12,12,18,.92);
+  --vr-muted: rgba(12,12,18,.70);
+
+  /* accent (red like Abaad) */
+  --vr-accent: #d60035;
+  --vr-accentSoft: rgba(214,0,53,.10);
+  --vr-accentStroke: rgba(214,0,53,.22);
+
+  /* glass blur */
+  --vr-blur: 14px;
+
+  /* shadows */
+  --vr-shadowSoft: 0 18px 42px rgba(0,0,0,.10);
+  --vr-shadowLift: 0 24px 60px rgba(0,0,0,.16);
+  --vr-shadowInset: inset 0 1px 0 rgba(255,255,255,.55);
+}
+
+/* page background (safe) */
+body{
+  background: var(--vr-bg);
+  color: var(--vr-text);
+}
+
+/* =========================
+   HERO
+========================= */
+.vrHero{
+  position: relative;
+  margin-top: 0;
+}
+
+.vrHero__media{
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 56vh, 560px);
+  border-radius: 22px;
+  overflow: hidden;
+
+  /* 3D depth for hero */
+  box-shadow: var(--vr-shadowLift);
+  border: 1px solid rgba(255,255,255,.35);
+}
+
+.vrHero__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.01);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.vrHero__shade{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 500px at 70% 20%, rgba(255,255,255,.18), transparent 60%),
+    linear-gradient(to top, rgba(0,0,0,.42), rgba(0,0,0,.10));
+}
+
+.vrHero__content{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+  align-items: end;
+  padding: 18px;
+  pointer-events: none;
+}
+
+.vrHero__copy,
+.vrHero__badge{ pointer-events: auto; }
+
+.vrPill{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.58);
+  border: 1px solid rgba(255,255,255,.35);
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+  box-shadow: var(--vr-shadowInset), 0 10px 24px rgba(0,0,0,.12);
+  font-size: 13px;
+}
+
+.vrHero__title{
+  margin: 10px 0 8px;
+  font-size: clamp(22px, 2.2vw, 34px);
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+.vrHero__desc{
+  margin: 0 0 14px;
+  max-width: 64ch;
+  line-height: 1.9;
+  color: rgba(255,255,255,.92);
+  background: rgba(10,10,14,.28);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 16px;
+  padding: 12px 14px;
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+}
+
+.vrHero__actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.vrHero__badge{
+  display: grid;
+  gap: 10px;
+  justify-content: end;
+}
+
+.vrMiniStat{
+  min-width: 180px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.58);
+  border: 1px solid rgba(255,255,255,.35);
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+  box-shadow: var(--vr-shadowInset), 0 10px 26px rgba(0,0,0,.12);
+  text-align: start;
+}
+
+.vrMiniStat strong{
+  display: block;
+  font-size: 18px;
+  font-weight: 900;
+  color: rgba(0,0,0,.90);
+}
+
+.vrMiniStat span{
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(0,0,0,.70);
+}
+
+/* =========================
+   SECTIONS / HEAD
+========================= */
+.vrSection{ padding: 34px 0; }
+
+.vrHead{ margin-bottom: 18px; }
+
+/* grids */
+.vrGrid2{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 18px;
+  align-items: stretch; /* مهم حتى النص والصورة نفس المستوى */
+}
+
+.vrGrid3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* =========================
+   CARDS (Glass + clean)
+========================= */
+.vrCard{
+  background: var(--vr-surface);
+  border: 1px solid var(--vr-stroke);
+  border-radius: 18px;
+  padding: 16px;
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+  box-shadow: var(--vr-shadowInset), var(--vr-shadowSoft);
+}
+
+.vrCard--wide{ margin-top: 14px; }
+
+.vrCard h3{
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--vr-text);
+}
+
+.vrCard p{
+  margin: 0;
+  line-height: 1.9;
+  color: var(--vr-muted);
+}
+
+/* bullets (if used inside vrCard) */
+.vrCard .bullets{
+  margin: 10px 0 0;
+  padding: 0 18px 0 0;
+}
+.vrCard .bullets li{
+  line-height: 1.9;
+  color: var(--vr-muted);
+}
+
+/* =========================
+   MEDIA BLOCK (THIS IS YOUR PROBLEM AREA)
+   HTML uses: .vrMedia + img.vrMedia_img + span.vrMedia_cap
+========================= */
+.vrMedia{
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,.36);
+  border: 1px solid rgba(255,255,255,.30);
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+
+  /* 3D depth */
+  box-shadow: var(--vr-shadowLift);
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* the image: make it taller & align with text */
+.vrMedia_img{
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+
+  /* tall look */
+  aspect-ratio: 3 / 4;
+
+  object-fit: cover;
+  display: block;
+
+  /* subtle 3D separation */
+  filter: saturate(1.03) contrast(1.02);
+}
+
+/* optional soft vignette to make it premium */
+.vrMedia::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: radial-gradient(900px 520px at 60% 20%, rgba(255,255,255,.10), transparent 60%);
+}
+
+/* caption */
+.vrMedia_cap{
+  display: block;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: rgba(12,12,18,.68);
+  background: rgba(255,255,255,.55);
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+
+/* =========================
+   ICON CARD (if used)
+========================= */
+.vrCard--icon{
+  display: grid;
+  gap: 10px;
+}
+
+.vrIcon{
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 12px;
+
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.38);
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+  box-shadow: var(--vr-shadowInset), 0 12px 28px rgba(0,0,0,.12);
+
+  color: #111;
+}
+
+/* =========================
+   STEPS
+========================= */
+.vrSteps{ margin-top: 14px; }
+
+.vrStep{
+  background: var(--vr-surface2);
+  border: 1px solid var(--vr-stroke);
+  border-radius: 18px;
+  padding: 14px 16px;
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+  box-shadow: var(--vr-shadowInset), var(--vr-shadowSoft);
+}
+
+.vrStep strong{
+  display: block;
+  margin-bottom: 8px;
+  color: var(--vr-text);
+}
+
+.vrStep p{
+  margin: 0;
+  line-height: 1.9;
+  color: var(--vr-muted);
+}
+
+/* =========================
+   NOTE
+========================= */
+.vrNote{
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.45);
+  border: 1px dashed rgba(20,20,30,.22);
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+  display: grid;
+  gap: 6px;
+}
+
+/* =========================
+   CTA BOTTOM
+========================= */
+.vrCta{ padding: 26px 0 44px; }
+
+.vrCta__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  padding: 16px 18px;
+  border-radius: 22px;
+
+  background: rgba(255,255,255,.50);
+  border: 1px solid rgba(255,255,255,.30);
+  backdrop-filter: blur(var(--vr-blur));
+  -webkit-backdrop-filter: blur(var(--vr-blur));
+  box-shadow: var(--vr-shadowInset), var(--vr-shadowSoft);
+}
+
+.vrCta__copy h2{
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: var(--vr-text);
+}
+
+.vrCta__copy p{
+  margin: 0;
+  color: var(--vr-muted);
+  line-height: 1.8;
+}
+
+.vrCta__actions{ flex: 0 0 auto; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 980px){
+  .vrHero__content{
+    grid-template-columns: 1fr;
+    align-items: end;
+  }
+
+  .vrHero__badge{
+    justify-content: start;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .vrMiniStat{ min-width: auto; }
+
+  .vrGrid3{ grid-template-columns: 1fr; }
+  .vrGrid2{ grid-template-columns: 1fr; }
+
+  /* on mobile, keep media not too tall */
+  .vrMedia_img{ aspect-ratio: 16 / 9; }
+
+  .vrCta__inner{
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* =========================
+   Universal Footer Fix (All Pages)
+   - Better contrast (no white text on light bg)
+   - Mobile: 2 columns (less scroll)
+   - Icons more tidy
+   - RTL/LTR auto alignment
+========================= */
+
+:root{
+  --footerBg: #f4efe6;          /* خلفية فاتحة مرتبة */
+  --footerCard: rgba(255,255,255,.70);
+  --footerInk: #161616;         /* نص داكن */
+  --footerMuted: rgba(22,22,22,.65);
+  --footerLine: rgba(22,22,22,.12);
+  --footerAccent: #c33;         /* أكسنت أحمر */
+}
+
+/* Main footer container */
+.uFooter{
+  background: var(--footerBg);
+  color: var(--footerInk);
+  border-top: 1px solid var(--footerLine);
+  padding-block: 28px 18px;
+}
+
+/* prevent any inherited "white text" */
+.uFooter *{
+  color: inherit;
+}
+
+/* Grid */
+.uFooter__grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 22px;
+  align-items: start;
+}
+
+/* Headings */
+.uFooter__h{
+  margin: 0 0 10px;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .2px;
+  color: var(--footerInk);
+}
+
+/* Links */
+.uFooter__link{
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 6px 0;
+  color: var(--footerInk);
+  opacity: .92;
+  text-align: start;                 /* مهم: يشتغل RTL/LTR */
+}
+
+.uFooter__link:hover{
+  opacity: 1;
+  color: var(--footerAccent);
+}
+
+/* mini contact */
+.uFooter__contactMini{
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.uFooter__miniLink{
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--footerMuted);
+  text-align: start;
+}
+
+.uFooter__miniLink:hover{
+  color: var(--footerInk);
+}
+
+/* Social icons row */
+.uFooter__social{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start; /* default */
+  margin-top: 6px;
+}
+
+.uFooter__ico{
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--footerCard);
+  border: 1px solid var(--footerLine);
+  text-decoration: none;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.uFooter__ico svg{
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  color: var(--footerInk);
+  opacity: .9;
+}
+
+.uFooter__ico:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.88);
+  border-color: rgba(195,51,51,.35);
+}
+
+.uFooter__ico:hover svg{
+  color: var(--footerAccent);
+  opacity: 1;
+}
+
+/* Bottom line */
+.uFooter__bottom{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--footerLine);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--footerMuted);
+}
+
+.uFooter__sep{
+  opacity: .45;
+}
+
+/* =========================
+   RTL / LTR alignment (automatic)
+========================= */
+
+/* everything aligns “start” automatically,
+   but social row direction we enforce for cleanliness */
+
+html[dir="rtl"] .uFooter{
+  direction: rtl;
+}
+html[dir="rtl"] .uFooter__social{
+  justify-content: flex-start; /* start = يمين بالـ RTL */
+}
+
+html[dir="ltr"] .uFooter{
+  direction: ltr;
+}
+html[dir="ltr"] .uFooter__social{
+  justify-content: flex-start; /* start = يسار بالـ LTR */
+}
+
+/* =========================
+   Responsive: Mobile 2 Columns
+========================= */
+
+/* Tablet -> 2 columns */
+@media (max-width: 980px){
+  .uFooter__grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Phone -> still 2 columns (less scroll) */
+@media (max-width: 640px){
+  .uFooter{
+    padding-block: 20px 14px;
+  }
+
+  .uFooter__grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 14px;
+  }
+
+  .uFooter__h{
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .uFooter__link{
+    font-size: 13px;
+    padding: 5px 0;
+  }
+
+  .uFooter__ico{
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+  }
+}
+
+/* Very small screens: keep 2 columns but tighten */
+@media (max-width: 380px){
+  .uFooter__grid{
+    gap: 12px 10px;
+  }
+  .uFooter__ico{
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* =========================================================
+   VR PAGE — FIX light theme + stop dark-mode overrides
+   - fixes white text on desktop
+   - fixes ugly dark-mode on phones
+========================================================= */
+
+/* اجبار المتصفح يعتبرها Light */
+html, body{
+  color-scheme: light;
+}
+
+/* متغيرات صفحة النبذة (ثيم فاتح ثابت) */
+:root{
+  --bg: #f4f1ea;
+  --paper: #fbfaf7;
+  --ink: #151515;
+  --muted: #5c5c5c;
+  --line: rgba(0,0,0,.10);
+  --accent: #b08b57;
+  --shadow2: 0 12px 28px rgba(0,0,0,.10);
+  --r-xl: 30px;
+}
+
+/* خلفية + لون نص الصفحة كله */
+body{
+  background:
+    radial-gradient(1000px 520px at 70% 0%, rgba(176,139,87,.10) 0%, rgba(176,139,87,0) 60%),
+    radial-gradient(1000px 520px at 20% 10%, rgba(0,0,0,.06) 0%, rgba(0,0,0,0) 60%),
+    var(--bg);
+  color: var(--ink);
+}
+
+/* اصلاح أي نصوص بيضة متوارثة */
+p, li, span, small, em{
+  color: var(--muted);
+}
+h1, h2, h3, h4, h5, h6{
+  color: var(--ink);
+}
+
+/* لو عندك كلاس للسكشن الرئيسي */
+main, .wrap, .shell, .page, .content{
+  color: var(--ink);
+}
+
+/* الكاردات/البلوكات الي عندك بصفحة VR */
+.card, .vrCard, .featureCard, .box, .panel{
+  background: rgba(251,250,247,.80);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow2);
+}
+
+/* النصوص داخل الكاردات (حتى ما تبقى بيضة) */
+.card *, .vrCard *, .featureCard *, .box *, .panel *{
+  color: inherit;
+}
+
+/* إذا عندك سطر وصف تحت العنوان طالع أبيض مثل بالصورة */
+.vrSub, .subTitle, .lead, .sectionDesc{
+  color: var(--muted) !important;
+}
+
+/* حماية إضافية: حتى لو الجهاز Dark mode يبقى نفس الوانك */
+@media (prefers-color-scheme: dark){
+  html, body{ color-scheme: light; }
+  body{ background: var(--bg) !important; color: var(--ink) !important; }
+  p, li, span, small, em{ color: var(--muted) !important; }
+  h1,h2,h3,h4,h5,h6{ color: var(--ink) !important; }
+}
+/* =========================================================
+   TOPBAR — make text lighter & less dominant
+========================================================= */
+
+/* روابط التوب بار */
+.topbar__nav a{
+  font-weight: 600 !important;          /* كان 900 — ثقيل زيادة */
+  color: rgba(0,0,0,.65) !important;    /* أخف بصرياً */
+  letter-spacing: .2px;                 /* ينعّم الإحساس */
+}
+
+/* hover: يبرز بدون ما يصير فاقع */
+.topbar__nav a:hover{
+  color: rgba(0,0,0,.85) !important;
+  background: rgba(0,0,0,.04);
+}
+
+/* العنصر النشط (الصفحة الحالية) */
+.topbar__nav a.active,
+.topbar__nav a[aria-current="page"]{
+  font-weight: 700 !important;
+  color: rgba(0,0,0,.95) !important;
+  background: transparent !important;
+}
+
+/* زر EN */
+.topbar .langBtn,
+.topbar .lang,
+.topbar .langSwitch{
+  font-weight: 600 !important;
+  color: rgba(0,0,0,.6) !important;
+}

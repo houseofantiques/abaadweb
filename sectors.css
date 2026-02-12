@@ -1,0 +1,475 @@
+/* =========================================================
+   SECTORS — light paper / glass (matches your screenshots)
+========================================================= */
+
+:root{
+  --sec-bg: #f4f1ea;
+  --sec-paper: #fbfaf7;
+  --sec-ink: #151515;
+  --sec-muted: rgba(0,0,0,.62);
+  --sec-line: rgba(0,0,0,.10);
+  --sec-accent: rgba(176,139,87,.28);
+  --sec-shadow: 0 18px 55px rgba(0,0,0,.12);
+  --sec-shadow2: 0 12px 28px rgba(0,0,0,.08);
+  --sec-r: 24px;
+}
+
+/* page background only (safe) */
+.sectorsBody{
+  background:
+    radial-gradient(900px 520px at 20% 0%, rgba(176,139,87,.12) 0%, rgba(176,139,87,0) 60%),
+    radial-gradient(900px 520px at 80% 10%, rgba(0,0,0,.06) 0%, rgba(0,0,0,0) 60%),
+    var(--sec-bg);
+  color: var(--sec-ink);
+}
+
+/* HERO */
+.secHero{ padding: 26px 0 10px; }
+
+.secHero__card{
+  border-radius: 30px;
+  background: rgba(251,250,247,.78);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: var(--sec-shadow);
+  padding: 18px 18px;
+}
+
+.secHero__kicker{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:13px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(0,0,0,.10);
+}
+.pill--soft{
+  background: rgba(176,139,87,.10);
+  border-color: rgba(176,139,87,.25);
+  color: rgba(0,0,0,.72);
+}
+
+.secHero__title{
+  margin: 14px 0 8px;
+  font-weight: 900;
+  line-height:1.2;
+  font-size: clamp(22px, 2.6vw, 34px);
+}
+
+.secHero__desc{
+  margin: 0;
+  max-width: 90ch;
+  color: var(--sec-muted);
+  font-weight: 800;
+  line-height: 1.9;
+  font-size: 13px;
+}
+
+.secHero__chips{
+  margin-top: 12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.chip{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.78);
+  font-weight: 900;
+  font-size: 12.5px;
+  color: rgba(0,0,0,.70);
+}
+
+/* GRID */
+.secGrid{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+  padding-bottom: 10px;
+}
+
+/* CARD */
+.secCard{
+  border-radius: 30px;
+  background: rgba(251,250,247,.78);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: var(--sec-shadow2);
+  overflow:hidden;
+}
+
+.secCard__media{
+  position:relative;
+  aspect-ratio: 16 / 9;
+  background: #e9e3d7;
+  overflow:hidden;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.secCard__media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  filter: contrast(1.02) saturate(1.02);
+}
+.secCard__badge{
+  position:absolute;
+  inset: 12px 12px auto auto; /* RTL: يمين */
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.78);
+  color:#fff;
+  font-weight: 900;
+  font-size: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+}
+.secCard__badge--docs{
+  background: rgba(176,139,87,.90);
+}
+
+.secCard__body{
+  padding: 14px 14px 16px;
+}
+
+.secCard__head{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.secCard__ico{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: rgba(176,139,87,.12);
+  border: 1px solid rgba(176,139,87,.26);
+  flex: 0 0 auto;
+}
+
+.secCard__ico svg{
+  width: 20px;
+  height: 20px;
+  fill: rgba(0,0,0,.78);
+}
+
+.secCard__title{
+  margin:0;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.secCard__desc{
+  margin: 0 0 12px;
+  color: var(--sec-muted);
+  font-weight: 800;
+  line-height: 1.9;
+  font-size: 13px;
+}
+
+/* two columns inside card */
+.secCard__cols{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.secList{
+  border-radius: 18px;
+  background: rgba(255,255,255,.76);
+  border: 1px solid rgba(0,0,0,.08);
+  padding: 12px;
+}
+
+.secList__h{
+  margin: 0 0 8px;
+  font-weight: 900;
+  font-size: 13px;
+  color: rgba(0,0,0,.82);
+}
+
+.secList__ul{
+  margin:0;
+  padding: 0 18px 0 0; /* RTL bullets */
+  color: rgba(0,0,0,.65);
+  font-weight: 800;
+  line-height: 1.9;
+  font-size: 12.8px;
+}
+
+/* CTA */
+.secCta{ padding: 8px 0 26px; }
+
+.secCta__card{
+  border-radius: 30px;
+  background: rgba(251,250,247,.78);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: var(--sec-shadow);
+  padding: 16px;
+  display:grid;
+  gap: 10px;
+  text-align:center;
+}
+
+.secCta__h{
+  margin: 0;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.secCta__p{
+  margin: 0 auto;
+  max-width: 85ch;
+  color: var(--sec-muted);
+  font-weight: 800;
+  line-height: 1.9;
+  font-size: 13px;
+}
+
+.secCta__actions{
+  display:flex;
+  gap: 10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .secGrid{ grid-template-columns: 1fr; }
+  .secCard__cols{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px){
+  .secHero__card{ padding: 14px; border-radius: 26px; }
+  .secCard{ border-radius: 26px; }
+  .secCard__body{ padding: 12px; }
+  .secCard__badge{ inset: 10px 10px auto auto; }
+  .secCta__card{ border-radius: 26px; }
+}
+/* =========================
+   Universal Footer Fix (All Pages)
+   - Better contrast (no white text on light bg)
+   - Mobile: 2 columns (less scroll)
+   - Icons more tidy
+   - RTL/LTR auto alignment
+========================= */
+
+:root{
+  --footerBg: #f4efe6;          /* خلفية فاتحة مرتبة */
+  --footerCard: rgba(255,255,255,.70);
+  --footerInk: #161616;         /* نص داكن */
+  --footerMuted: rgba(22,22,22,.65);
+  --footerLine: rgba(22,22,22,.12);
+  --footerAccent: #c33;         /* أكسنت أحمر */
+}
+
+/* Main footer container */
+.uFooter{
+  background: var(--footerBg);
+  color: var(--footerInk);
+  border-top: 1px solid var(--footerLine);
+  padding-block: 28px 18px;
+}
+
+/* prevent any inherited "white text" */
+.uFooter *{
+  color: inherit;
+}
+
+/* Grid */
+.uFooter__grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 22px;
+  align-items: start;
+}
+
+/* Headings */
+.uFooter__h{
+  margin: 0 0 10px;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .2px;
+  color: var(--footerInk);
+}
+
+/* Links */
+.uFooter__link{
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 6px 0;
+  color: var(--footerInk);
+  opacity: .92;
+  text-align: start;                 /* مهم: يشتغل RTL/LTR */
+}
+
+.uFooter__link:hover{
+  opacity: 1;
+  color: var(--footerAccent);
+}
+
+/* mini contact */
+.uFooter__contactMini{
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.uFooter__miniLink{
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--footerMuted);
+  text-align: start;
+}
+
+.uFooter__miniLink:hover{
+  color: var(--footerInk);
+}
+
+/* Social icons row */
+.uFooter__social{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start; /* default */
+  margin-top: 6px;
+}
+
+.uFooter__ico{
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--footerCard);
+  border: 1px solid var(--footerLine);
+  text-decoration: none;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.uFooter__ico svg{
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  color: var(--footerInk);
+  opacity: .9;
+}
+
+.uFooter__ico:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.88);
+  border-color: rgba(195,51,51,.35);
+}
+
+.uFooter__ico:hover svg{
+  color: var(--footerAccent);
+  opacity: 1;
+}
+
+/* Bottom line */
+.uFooter__bottom{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--footerLine);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--footerMuted);
+}
+
+.uFooter__sep{
+  opacity: .45;
+}
+
+/* =========================
+   RTL / LTR alignment (automatic)
+========================= */
+
+/* everything aligns “start” automatically,
+   but social row direction we enforce for cleanliness */
+
+html[dir="rtl"] .uFooter{
+  direction: rtl;
+}
+html[dir="rtl"] .uFooter__social{
+  justify-content: flex-start; /* start = يمين بالـ RTL */
+}
+
+html[dir="ltr"] .uFooter{
+  direction: ltr;
+}
+html[dir="ltr"] .uFooter__social{
+  justify-content: flex-start; /* start = يسار بالـ LTR */
+}
+
+/* =========================
+   Responsive: Mobile 2 Columns
+========================= */
+
+/* Tablet -> 2 columns */
+@media (max-width: 980px){
+  .uFooter__grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Phone -> still 2 columns (less scroll) */
+@media (max-width: 640px){
+  .uFooter{
+    padding-block: 20px 14px;
+  }
+
+  .uFooter__grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 14px;
+  }
+
+  .uFooter__h{
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .uFooter__link{
+    font-size: 13px;
+    padding: 5px 0;
+  }
+
+  .uFooter__ico{
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+  }
+}
+
+/* Very small screens: keep 2 columns but tighten */
+@media (max-width: 380px){
+  .uFooter__grid{
+    gap: 12px 10px;
+  }
+  .uFooter__ico{
+    width: 38px;
+    height: 38px;
+  }
+}

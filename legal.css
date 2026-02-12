@@ -1,0 +1,286 @@
+/* =========================
+   Abaad Al Iraq — Legal pages
+   matches your site look:
+   - light page background
+   - white rounded cards
+   - dark footer untouched
+========================= */
+
+:root{
+  --bg: #f3f0ea;         /* قريب من البيج اللي عندك */
+  --panel: #ffffff;
+  --text: #101318;
+  --muted: #5d6673;
+  --stroke: rgba(16,19,24,.10);
+  --shadow: 0 14px 40px rgba(16,19,24,.08);
+
+  --accent: #e02828;     /* أحمر أبعاد العراق */
+  --accent2: #8b1d1d;
+
+  --radius: 20px;
+  --wrap: 1120px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.7;
+}
+
+.wrap{
+  width:min(var(--wrap), calc(100% - 28px));
+  margin-inline:auto;
+}
+
+/* =========================
+   Top bar (legal-only)
+   if you already have your own topbar in styles.css
+   keep it and delete this block safely
+========================= */
+.legalTop{
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--stroke);
+}
+
+.legalTop__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 0;
+}
+
+.legalBrand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:inherit;
+  min-width: 220px;
+}
+.legalBrand img{
+  width:38px;
+  height:38px;
+  object-fit:contain;
+}
+.legalBrand strong{
+  display:block;
+  font-weight:900;
+  letter-spacing:.2px;
+}
+.legalBrand em{
+  display:block;
+  font-style:normal;
+  color: var(--muted);
+  font-size:12px;
+  margin-top:2px;
+}
+
+.legalNav{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.legalNav a{
+  text-decoration:none;
+  color: var(--muted);
+  padding:8px 12px;
+  border-radius: 999px;
+  border:1px solid transparent;
+  transition:.2s ease;
+  font-size:13px;
+  background: rgba(16,19,24,.03);
+}
+.legalNav a:hover{
+  color: var(--text);
+  border-color: var(--stroke);
+}
+.legalNav a.isActive{
+  color: var(--text);
+  border-color: rgba(224,40,40,.35);
+  background: rgba(224,40,40,.10);
+}
+
+.legalLang{
+  display:flex;
+  gap:8px;
+}
+.legalLang button{
+  appearance:none;
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.8);
+  color: var(--text);
+  padding:8px 10px;
+  border-radius: 999px;
+  cursor:pointer;
+  font-weight:800;
+  font-size:12px;
+  transition:.2s ease;
+}
+.legalLang button[aria-pressed="true"]{
+  border-color: rgba(224,40,40,.45);
+  background: rgba(224,40,40,.10);
+}
+
+/* =========================
+   Page layout
+========================= */
+.legalPage{
+  padding: 18px 0 28px;
+}
+
+.legalHero{
+  background: linear-gradient(180deg, rgba(224,40,40,.06), rgba(255,255,255,.65));
+  border: 1px solid var(--stroke);
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  overflow:hidden;
+}
+
+.legalHero__row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.legalH1{
+  margin:0;
+  font-size: clamp(22px, 3vw, 34px);
+  letter-spacing:.2px;
+}
+.legalMeta{
+  margin:6px 0 0;
+  color: var(--muted);
+  font-size:13px;
+}
+
+.legalBadge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius: 999px;
+  border:1px solid rgba(224,40,40,.25);
+  background: rgba(224,40,40,.08);
+  color: var(--text);
+  font-weight:800;
+  font-size: 12px;
+}
+
+.legalGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  margin-top: 14px;
+}
+
+.legalCard{
+  background: var(--panel);
+  border:1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 16px;
+}
+
+.legalCard h2{
+  margin:0 0 10px;
+  font-size: 15px;
+  letter-spacing:.2px;
+}
+.legalCard p{
+  margin:0;
+  color: var(--muted);
+}
+
+.legalCard ul{
+  margin: 10px 0 0;
+  padding-inline-start: 20px;
+  color: var(--muted);
+}
+.legalCard li{margin: 6px 0}
+.legalCard b, .legalCard strong{color: var(--text)}
+
+.legalContact{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:10px;
+  margin-top: 12px;
+}
+.legalPill{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  text-decoration:none;
+  color: var(--text);
+  border:1px solid var(--stroke);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(16,19,24,.02);
+  transition:.2s ease;
+  min-height: 70px;
+}
+.legalPill:hover{
+  transform: translateY(-1px);
+  border-color: rgba(224,40,40,.28);
+}
+.legalPill__k{
+  color: var(--muted);
+  font-size: 12px;
+}
+.legalPill__v{
+  font-weight:900;
+  font-size: 13px;
+}
+
+/* section full width */
+.legalFull{
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   Compatibility with your existing dark footer
+   (Do NOT style .uFooter here)
+========================= */
+.legalSpaceToFooter{
+  height: 14px;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .legalGrid{grid-template-columns: 1fr}
+  .legalContact{grid-template-columns: 1fr}
+  .legalBrand{min-width:auto}
+}
+@media (max-width: 560px){
+  .legalTop__inner{flex-direction:column; align-items:stretch}
+  .legalBrand{justify-content:center}
+  .legalNav{justify-content:center}
+  .legalLang{justify-content:center}
+}
+/* legal.css — Cairo font only */
+
+/* 1) Load Cairo */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap');
+
+/* 2) Apply to the whole legal page (and everything inside it) */
+html, body{
+  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+/* 3) Ensure form elements inherit the same font */
+button, input, textarea, select{
+  font-family: inherit !important;
+}
